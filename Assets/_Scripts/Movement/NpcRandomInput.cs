@@ -5,12 +5,12 @@ using UnityEngine;
 
 // Required Components
 [RequireComponent(typeof(CharacterMovement))]
-[RequireComponent(typeof(ItemCollisionSystem))]
+[RequireComponent(typeof(NpcCollisionSystem))]
 
-public class AiRandomInput : MonoBehaviour
+public class NpcRandomInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;
-    private ItemCollisionSystem collisions;
+    private NpcCollisionSystem collisions;
 
     private Vector3 direction;
 
@@ -20,10 +20,10 @@ public class AiRandomInput : MonoBehaviour
         characterMovement = GetComponent<CharacterMovement>();
 
         // Get ItemCollisionSystem component
-        collisions = GetComponent<ItemCollisionSystem>();
+        collisions = GetComponent<NpcCollisionSystem>();
 
         // Subscribe to "ItemCollidedWithWall" event
-        collisions.ItemCollidedWithWall += SetNewDirection;
+        collisions.CollidedWithWall += SetNewDirection;
     }
 
     void Start()

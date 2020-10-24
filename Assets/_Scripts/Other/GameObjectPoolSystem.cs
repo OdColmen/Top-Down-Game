@@ -20,7 +20,7 @@ public class GameObjectPoolSystem : MonoBehaviour
         }
     }
 
-    public void DisablePool(Vector3 position)
+    public void DisableObjectsInPool()
     {
         for (int i = 0; i < objectPool.Length; i++)
         {

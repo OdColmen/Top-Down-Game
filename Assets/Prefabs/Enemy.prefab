@@ -11,12 +11,13 @@ GameObject:
   - component: {fileID: 6497832705245828411}
   - component: {fileID: 6967546495385861336}
   - component: {fileID: 2967524650806412810}
-  - component: {fileID: 5972607639365948826}
-  - component: {fileID: 4647805281707936705}
-  - component: {fileID: 2967524650806412814}
+  - component: {fileID: 3986522284138807429}
+  - component: {fileID: 6669329847095804691}
+  - component: {fileID: -1529784049136407548}
+  - component: {fileID: 3686246591971382886}
   m_Layer: 0
-  m_Name: Hero
-  m_TagString: Hero
+  m_Name: Enemy
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -74,8 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: f6c7fbdf1b9dfb44dad7e5f1fdbeee54, type: 3}
-  m_Color: {r: 0.18431371, g: 0.5058885, b: 0.8666667, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 6c4ffe11b12ebc94ba78ff8ed7563aad, type: 3}
+  m_Color: {r: 0.754717, g: 0.12459949, b: 0.12459949, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -100,13 +101,13 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_GravityScale: 0
+  m_Material: {fileID: 6200000, guid: 926d5e733dbc2f04c9242bd938dabd25, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 0
---- !u!70 &5972607639365948826
+--- !u!70 &3986522284138807429
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -119,10 +120,10 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.17}
-  m_Size: {x: 2.33, y: 3.01}
+  m_Offset: {x: 0, y: -0.11}
+  m_Size: {x: 2.91, y: 2.72}
   m_Direction: 0
---- !u!114 &4647805281707936705
+--- !u!114 &6669329847095804691
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -135,7 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
---- !u!114 &2967524650806412814
+--- !u!114 &-1529784049136407548
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -144,6 +145,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 2970946779148819226}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 35d01c865646ed243afcc869dbde5d7a, type: 3}
+  m_Script: {fileID: 11500000, guid: 5bd63ace853665b499273a4dee39005a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3686246591971382886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2970946779148819226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e14ca695e78f9ab44ac788ba481a53f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

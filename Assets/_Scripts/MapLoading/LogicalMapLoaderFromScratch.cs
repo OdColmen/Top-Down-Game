@@ -5,9 +5,9 @@ using UnityEngine;
 // Required Components
 [RequireComponent(typeof(RealMapLoaderFromArray))]
 
-public class LogicalMapLoaderFromScratch : MonoBehaviour
+public class LogicalMapLoaderFromScratch : MapLoader
 {
-    private RealMapLoaderFromArray mapLoader;
+    private RealMapLoaderFromArray realMapLoader;
 
     private readonly int rowSize = 16;
     private readonly int colSize = 16;
@@ -17,7 +17,7 @@ public class LogicalMapLoaderFromScratch : MonoBehaviour
     void Awake()
     {
         // Get RealMapLoaderFromArray component
-        mapLoader = GetComponent<RealMapLoaderFromArray>();
+        realMapLoader = GetComponent<RealMapLoaderFromArray>();
 
         // Set size of logicalMap
         logicalMap = new char[rowSize][];
@@ -25,14 +25,6 @@ public class LogicalMapLoaderFromScratch : MonoBehaviour
         {
             logicalMap[row] = new char[colSize];
         }
-
-        // Create map
-        CreateMapFromScratch();
-    }
-
-    private void Start()
-    {
-        LoadMap();
     }
 
     private void CreateMapFromScratch()
@@ -49,9 +41,17 @@ public class LogicalMapLoaderFromScratch : MonoBehaviour
         }
     }
 
-    public void LoadMap()
+    public override void LoadMap()
     {
+        // Create map crom scratch
+        CreateMapFromScratch();
+
         // Load real map
-        mapLoader.LoadRealMap(logicalMap, 'x');
+        realMapLoader.LoadMap(logicalMap, 'x');
+    }
+
+    public override void DisableMap()
+    {
+        realMapLoader.DisableMap();
     }
 }

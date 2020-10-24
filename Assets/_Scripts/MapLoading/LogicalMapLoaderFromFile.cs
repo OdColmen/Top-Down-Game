@@ -6,9 +6,9 @@ using System;
 // Required Components
 [RequireComponent(typeof(RealMapLoaderFromArray))]
 
-public class LogicalMapLoaderFromFile : MonoBehaviour
+public class LogicalMapLoaderFromFile : MapLoader
 {
-    private RealMapLoaderFromArray mapLoader;
+    private RealMapLoaderFromArray realMapLoader;
 
     private FileReader fr;
     private readonly string fileName = "FixedMaps";
@@ -21,18 +21,13 @@ public class LogicalMapLoaderFromFile : MonoBehaviour
     void Awake()
     {
         // Get RealMapLoaderFromArray component
-        mapLoader = GetComponent<RealMapLoaderFromArray>();
+        realMapLoader = GetComponent<RealMapLoaderFromArray>();
 
         // Create FileReader object
         fr = new FileReader();
 
         // Read maps from file
         ReadMapsFromFile();
-    }
-
-    private void Start()
-    {
-        LoadMap();
     }
 
     private void ReadMapsFromFile()
@@ -110,12 +105,17 @@ public class LogicalMapLoaderFromFile : MonoBehaviour
         }
     }
 
-    public void LoadMap()
+    public override void LoadMap()
     {
         // Get random between 0-totalMaps
         int randomMap = UnityEngine.Random.Range(0, logicalMaps.Length);
 
         // Load real map
-        mapLoader.LoadRealMap(logicalMaps[randomMap], 'x');
+        realMapLoader.LoadMap(logicalMaps[randomMap], 'x');
+    }
+
+    public override void DisableMap()
+    {
+        realMapLoader.DisableMap();
     }
 }

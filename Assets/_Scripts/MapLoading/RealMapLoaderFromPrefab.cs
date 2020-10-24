@@ -2,26 +2,23 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RealMapLoaderFromPrefab : MonoBehaviour
+public class RealMapLoaderFromPrefab : MapLoader
 {
     [SerializeField] private GameObject MapParentPrefab = null;
     private GameObject[] maps;
-    private Vector3 parentOrigin = Vector3.zero;
     private Vector3 mapOrigin = Vector3.zero;
+    private Vector3 parentOrigin = Vector3.zero;
 
     private void Awake()
     {
         InitializeMaps();
     }
 
-    private void Start()
-    {
-        LoadRealMap();
-    }
-
     private void InitializeMaps()
     {
-        // Initialize parent
+        // ----- INITIALIZE PARENT -----
+
+        // Instantiate and set position
         GameObject mapParent = Instantiate(MapParentPrefab);
         mapParent.transform.position = parentOrigin;
         //mapParent.SetActive(true);
@@ -36,17 +33,25 @@ public class RealMapLoaderFromPrefab : MonoBehaviour
         for (int i = 0; i < childCount; i++)
         {
             // Initialize maps
-            maps[i] = MapParentPrefab.transform.GetChild(i).gameObject;
+            maps[i] = Instantiate(MapParentPrefab.transform.GetChild(i).gameObject);
             maps[i].transform.position = mapOrigin;
             maps[i].SetActive(false);
         }
     }
 
-    public void LoadRealMap()
+    public override void LoadMap()
     {
         // Get random between 0-mapsLength
         int random = Random.Range(0, maps.Length);
 
         maps[random].SetActive(true);
+    }
+
+    public override void DisableMap()
+    {
+        for (int i = 0; i < maps.Length; i++)
+        {
+            maps[i].SetActive(false);
+        }
     }
 }

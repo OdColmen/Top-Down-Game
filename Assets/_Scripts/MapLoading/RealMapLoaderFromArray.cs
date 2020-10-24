@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class RealMapLoaderFromArray : MonoBehaviour
 {
+    GameObject map;
     private GameObjectPoolSystem wallPool;
 
     [SerializeField] private GameObject wallPrefab = null;
     [SerializeField] private Vector3 firstWallPosition = Vector3.zero;
-    
+    private Vector3 mapOrigin = Vector3.zero;
+
     private float wallWidth;
     private float wallHeight;
 
@@ -34,16 +36,20 @@ public class RealMapLoaderFromArray : MonoBehaviour
     private void InitializeWallPool()
     {
         int poolSize = 128;
-        GameObject parent = new GameObject("Current Map");
+        map = new GameObject("Current Map");
+        map.gameObject.transform.position = mapOrigin;
 
         wallPool = GetComponent<GameObjectPoolSystem>();
-        wallPool.InitializePool(wallPrefab, poolSize, parent.transform);
+        wallPool.InitializePool(wallPrefab, poolSize, map.transform);
     }
 
     // Load a random map from the MapObject array
     // Return map
-    public void LoadRealMap(char[][] logicalMap, char wallType)
+    public void LoadMap(char[][] logicalMap, char wallType)
     {
+        // Enable map
+        map.SetActive(true);
+
         // Initialize current wall position
         Vector3 pos = new Vector3(firstWallPosition.x, firstWallPosition.y, firstWallPosition.z);
 
@@ -64,5 +70,11 @@ public class RealMapLoaderFromArray : MonoBehaviour
             // Move position to the next row
             pos = new Vector3(firstWallPosition.x, pos.y - wallHeight, pos.z);
         }
+    }
+
+    public void DisableMap()
+    {
+        map.SetActive(false);
+        wallPool.DisableObjectsInPool();
     }
 }
