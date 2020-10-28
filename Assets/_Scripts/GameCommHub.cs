@@ -14,12 +14,12 @@ public class GameCommHub : MonoBehaviour
         match.GameOver += GameOver;
 
         // Enable menu & disable game
-        EnableMenuDisableGame(true);
+        EnableMenuDisableGame(false);
     }
     
-    private void GameOver(bool success)
+    private void GameOver(bool mapWasCleared)
     {
-        EnableMenuDisableGame(false, success);
+        EnableMenuDisableGame(true, mapWasCleared);
     }    
 
     public void EnableGameDisableMenu()
@@ -29,9 +29,9 @@ public class GameCommHub : MonoBehaviour
         match.StartMatch();
     }
 
-    public void EnableMenuDisableGame(bool startingGame, bool success = false)
+    public void EnableMenuDisableGame(bool matchWasBeingPlayed, bool mapWasCleared = false)
     {
-        menu.EnableMenuPanel(startingGame, success);
+        menu.EnableMenuPanel(matchWasBeingPlayed, mapWasCleared);
         mapLoader.DisableMap();
         match.StopMatch();
     }

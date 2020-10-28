@@ -9,11 +9,14 @@ public class RealMapLoaderFromPrefab : MapLoader
     private Vector3 mapOrigin = Vector3.zero;
     private Vector3 parentOrigin = Vector3.zero;
 
-    private void Awake()
+    void Awake()
     {
         InitializeMaps();
     }
 
+    /// <summary>
+    /// Initializes the map prefabs and gets them ready for being loaded
+    /// </summary>
     private void InitializeMaps()
     {
         // ----- INITIALIZE PARENT -----
@@ -21,7 +24,7 @@ public class RealMapLoaderFromPrefab : MapLoader
         // Instantiate and set position
         GameObject mapParent = Instantiate(MapParentPrefab);
         mapParent.transform.position = parentOrigin;
-        //mapParent.SetActive(true);
+        mapParent.SetActive(true);
 
         // ----- INITIALIZE MAPS -----
 
@@ -39,6 +42,9 @@ public class RealMapLoaderFromPrefab : MapLoader
         }
     }
 
+    /// <summary>
+    /// Loads a random map and enables it on game
+    /// </summary>
     public override void LoadMap()
     {
         // Get random between 0-mapsLength
@@ -47,6 +53,9 @@ public class RealMapLoaderFromPrefab : MapLoader
         maps[random].SetActive(true);
     }
 
+    /// <summary>
+    /// Disables current map
+    /// </summary>
     public override void DisableMap()
     {
         for (int i = 0; i < maps.Length; i++)

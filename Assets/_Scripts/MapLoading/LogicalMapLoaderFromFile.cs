@@ -11,8 +11,7 @@ public class LogicalMapLoaderFromFile : MapLoader
     private RealMapLoaderFromArray realMapLoader;
 
     private FileReader fr;
-    private readonly string fileName = "FixedMaps";
-
+    
     private readonly int rowSize = 16;
     private readonly int colSize = 16;
 
@@ -30,9 +29,14 @@ public class LogicalMapLoaderFromFile : MapLoader
         ReadMapsFromFile();
     }
 
+    /// <summary>
+    /// Reads every map from a file
+    /// </summary>
     private void ReadMapsFromFile()
     {
         // ----- READ FILE -----
+
+        string fileName = "FixedMaps";
 
         // Read text file using FileReader class
         string fileContent = fr.ReadFile(fileName);
@@ -105,6 +109,9 @@ public class LogicalMapLoaderFromFile : MapLoader
         }
     }
 
+    /// <summary>
+    /// Loads a random map and enables it on game
+    /// </summary>
     public override void LoadMap()
     {
         // Get random between 0-totalMaps
@@ -114,6 +121,9 @@ public class LogicalMapLoaderFromFile : MapLoader
         realMapLoader.LoadMap(logicalMaps[randomMap], 'x');
     }
 
+    /// <summary>
+    /// Disables current map
+    /// </summary>
     public override void DisableMap()
     {
         realMapLoader.DisableMap();

@@ -6,6 +6,12 @@ using UnityEngine;
 
 public class FileReader
 {
+
+    /// <summary>
+    /// Reads the text of a given file
+    /// </summary>
+    /// <param name="fileName">The name of the file</param>
+    /// <returns>The content of the file as a string</returns>
     public string ReadFile(string fileName)
     {
         // Read file

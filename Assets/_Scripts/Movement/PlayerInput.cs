@@ -24,11 +24,17 @@ public class PlayerInput : MonoBehaviour
         characterMovement.Move(direction);
     }
 
+    /// <summary>
+    /// Reads the player directional input
+    /// </summary>
+    /// <returns>Input direction normalized</returns>
     private Vector3 GetPlayerDirectionInput()
     {
         // Get x and y axis
         float directionX = Input.GetAxis("Horizontal");
         float directionY = Input.GetAxis("Vertical");
+
+        //Debug.Log("dir x: " + directionX + " dir y: " + directionY);
 
         // Set movement direction
         Vector3 direction = new Vector3(directionX, directionY, 0);

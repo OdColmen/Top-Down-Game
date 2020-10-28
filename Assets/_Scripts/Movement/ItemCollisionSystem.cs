@@ -9,10 +9,10 @@ public class ItemCollisionSystem : NpcCollisionSystem
 
     public override void OnCollisionEnter2D(Collision2D col)
     {
+        // Check collision with every objects
         base.OnCollisionEnter2D(col);
 
-        // Colision item->hero
-        //if (gameObject.CompareTag("Item") && col.gameObject.CompareTag("Hero"))
+        // Invoke an event if collision is against hero
         if (col.gameObject.CompareTag("Hero"))
         {
             CollidedWithHero?.Invoke(gameObject);

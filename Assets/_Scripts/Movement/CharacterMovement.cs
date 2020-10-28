@@ -15,6 +15,9 @@ public class CharacterMovement : MonoBehaviour
         myRigidbody = GetComponent<Rigidbody2D>();
     }
 
+    /// <summary>
+    /// Moves game object's rigidbody
+    /// </summary>
     // Move game object by changing the rigidbody velocity, and rotate by setting the transform's up property
     // Rotate ONLY if the direction vector is big enough (This prevents the object from looking only
     // at one of the 4 main directions when movement stops)

@@ -5,15 +5,15 @@ using UnityEngine;
 public class NpcCollisionSystem : MonoBehaviour
 {
     public delegate void CollidedWithWall_EventHandler();
-    public event CollidedWithWall_EventHandler CollidedWithWall;
+    public event CollidedWithWall_EventHandler CollidedWithAnything;
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
-        // Colision npc->wall
-        //if (gameObject.CompareTag("Item") && col.gameObject.CompareTag("Wall"))
-        if (col.gameObject.CompareTag("Wall"))
+        // Invoke an event if collision is against any gameplay object
+        if (col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Item")
+            || col.gameObject.CompareTag("Enemy"))
         {
-            CollidedWithWall?.Invoke();
+            CollidedWithAnything?.Invoke();
         }
     }
 }

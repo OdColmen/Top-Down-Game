@@ -27,6 +27,9 @@ public class LogicalMapLoaderFromScratch : MapLoader
         }
     }
 
+    /// <summary>
+    /// Creates a random map on the char array[][] variable "logicalMap"
+    /// </summary>
     private void CreateMapFromScratch()
     {
         for (int row = 0; row < rowSize; row++)
@@ -41,15 +44,21 @@ public class LogicalMapLoaderFromScratch : MapLoader
         }
     }
 
+    /// <summary>
+    /// Loads a new map from scratch and enables it on game
+    /// </summary>
     public override void LoadMap()
     {
-        // Create map crom scratch
+        // Create map from scratch
         CreateMapFromScratch();
 
         // Load real map
         realMapLoader.LoadMap(logicalMap, 'x');
     }
 
+    /// <summary>
+    /// Disables current map
+    /// </summary>
     public override void DisableMap()
     {
         realMapLoader.DisableMap();

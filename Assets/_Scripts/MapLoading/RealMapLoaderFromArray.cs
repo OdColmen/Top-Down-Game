@@ -43,8 +43,11 @@ public class RealMapLoaderFromArray : MonoBehaviour
         wallPool.InitializePool(wallPrefab, poolSize, map.transform);
     }
 
-    // Load a random map from the MapObject array
-    // Return map
+    /// <summary>
+    /// Transforms a map from the given char[][] to a game object and enables it on game
+    /// </summary>
+    /// <param name="logicalMap">The map represented in a char array</param>
+    /// <param name="wallType">The char value that represents a map wall</param>
     public void LoadMap(char[][] logicalMap, char wallType)
     {
         // Enable map
@@ -72,9 +75,14 @@ public class RealMapLoaderFromArray : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Disables the map game object
+    /// </summary>
     public void DisableMap()
     {
+        // Disables the main object
         map.SetActive(false);
+        // Disables every object from the map
         wallPool.DisableObjectsInPool();
     }
 }

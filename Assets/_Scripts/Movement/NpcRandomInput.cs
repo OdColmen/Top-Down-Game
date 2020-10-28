@@ -16,19 +16,22 @@ public class NpcRandomInput : MonoBehaviour
 
     void Awake()
     {
+        // Initialize random
+        Random.InitState((int)System.DateTime.Now.Ticks);
+
         // Get CharacterMovement component
         characterMovement = GetComponent<CharacterMovement>();
 
         // Get ItemCollisionSystem component
         collisions = GetComponent<NpcCollisionSystem>();
 
-        // Subscribe to "ItemCollidedWithWall" event
-        collisions.CollidedWithWall += SetNewDirection;
+        // Subscribe to "ItemCollidedWithAnything" event
+        collisions.CollidedWithAnything += SetNewDirection;
     }
 
-    void Start()
+    void OnEnable()
     {
-        // Set direction at start of game
+        // Set new direction when enabling current object
         SetNewDirection();
     }
 
@@ -38,6 +41,9 @@ public class NpcRandomInput : MonoBehaviour
         characterMovement.Move(direction);
     }
 
+    /// <summary>
+    /// Randomly sets a new direction for the game object
+    /// </summary>
     public void SetNewDirection()
     {
         // Get random between 0-7
