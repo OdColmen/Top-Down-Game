@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class detects the collision between NPCs and other objects
+/// </summary>
 public class NpcCollisionSystem : MonoBehaviour
 {
     public delegate void CollidedWithWall_EventHandler();
+    /// <summary>
+    /// It's invoked when an NPC collides with any gameplay object.
+    /// </summary>
     public event CollidedWithWall_EventHandler CollidedWithAnything;
 
     public virtual void OnCollisionEnter2D(Collision2D col)

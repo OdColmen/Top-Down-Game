@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class moves the attached rigid body given a Vector3 direction.
+/// </summary>
 public class CharacterMovement : MonoBehaviour
 {
     public float speed = 50.0f;
@@ -16,10 +19,10 @@ public class CharacterMovement : MonoBehaviour
     }
 
     /// <summary>
-    /// Moves game object's rigidbody
+    /// Moves attached rigidbody
     /// </summary>
-    // Move game object by changing the rigidbody velocity, and rotate by setting the transform's up property
-    // Rotate ONLY if the direction vector is big enough (This prevents the object from looking only
+    // Moves the game object by changing the rigidbody's velocity, and rotates by setting the transform's up property.
+    // It rotates ONLY if the direction vector is big enough (This prevents the object from looking only
     // at one of the 4 main directions when movement stops)
     public void Move(Vector3 direction)
     {

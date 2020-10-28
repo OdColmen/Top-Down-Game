@@ -2,6 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class loads random maps from existing prefabs.
+/// It first creates a GameObject array with every map. Then, each time a new map is required,
+/// it randomly choses one of them.
+/// </summary>
 public class RealMapLoaderFromPrefab : MapLoader
 {
     [SerializeField] private GameObject MapParentPrefab = null;

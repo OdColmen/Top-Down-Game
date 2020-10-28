@@ -2,9 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class manages the hero and NPC game objects, the item collection logic,
+/// and invokes the GameOver event
+/// </summary>
 public class MatchManager : MonoBehaviour
 {
     public delegate void GameOver_EventHandler(bool mapWasCleared);
+    /// <summary>
+    /// It's invoked when the player wins or loses a match.
+    /// </summary>
     public event GameOver_EventHandler GameOver;
 
     [SerializeField] private GameObject hero = null;
@@ -36,7 +43,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Starts match by enabling all the characters
+    /// Starts a new match by enabling all the characters
     /// </summary>
     public void StartMatch()
     {
@@ -44,7 +51,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Stops match by disabling all the characters
+    /// Stops current match by disabling all the characters
     /// </summary>
     public void StopMatch()
     {
@@ -91,7 +98,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Collects an item, and invokes the game over event if all items were collected
+    /// Collects an item, and invokes the Game Over event if all items were collected
     /// </summary>
     /// <param name="itemCollected">GameObject of the item to collect</param>
     private void CollectItem(GameObject itemCollected)
@@ -117,7 +124,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Invokes the game over event
+    /// Invokes the Game Over event
     /// </summary>
     private void Die()
     {

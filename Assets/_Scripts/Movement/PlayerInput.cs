@@ -5,6 +5,10 @@ using UnityEngine;
 // Required Components
 [RequireComponent(typeof(CharacterMovement))]
 
+/// <summary>
+/// This class handles the player input and sets the direction of the hero movement.
+/// It passes the new direction to the CharacterMovement's Move method.
+/// </summary>
 public class PlayerInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;

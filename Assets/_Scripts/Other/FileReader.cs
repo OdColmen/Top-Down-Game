@@ -4,9 +4,11 @@ using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 
+/// <summary>
+/// This class reads the text of a given file and returns its content as a string.
+/// </summary>
 public class FileReader
 {
-
     /// <summary>
     /// Reads the text of a given file
     /// </summary>

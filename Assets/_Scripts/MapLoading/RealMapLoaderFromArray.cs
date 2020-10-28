@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class loads a real GameObject map from a char array.
+/// It first creates a char array with every map. Then, each time a new map is required,
+/// it randomly choses one and transforms it to a GameObject.
+/// </summary>
 public class RealMapLoaderFromArray : MonoBehaviour
 {
-    GameObject map;
+    private GameObject map;
     private GameObjectPoolSystem wallPool;
 
     [SerializeField] private GameObject wallPrefab = null;
@@ -26,6 +31,9 @@ public class RealMapLoaderFromArray : MonoBehaviour
         transform.position = Vector3.zero;
     }
 
+    /// <summary>
+    /// Gets the horizontal and vertical dimentions from the wall prefab
+    /// </summary>
     private void GetWallDimentions()
     {
         // Get dimensions
@@ -33,6 +41,9 @@ public class RealMapLoaderFromArray : MonoBehaviour
         wallHeight = wallPrefab.GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
+    /// <summary>
+    /// Initializes de pool array with of wall game objects
+    /// </summary>
     private void InitializeWallPool()
     {
         int poolSize = 128;
@@ -44,7 +55,7 @@ public class RealMapLoaderFromArray : MonoBehaviour
     }
 
     /// <summary>
-    /// Transforms a map from the given char[][] to a game object and enables it on game
+    /// Transforms a map from the given char array to a game object and enables it on game.
     /// </summary>
     /// <param name="logicalMap">The map represented in a char array</param>
     /// <param name="wallType">The char value that represents a map wall</param>

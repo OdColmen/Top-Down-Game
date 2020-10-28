@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+/// <summary>
+/// This class shows and hides the menu panel
+/// </summary>
 public class MenuManager : MonoBehaviour
 {
     [SerializeField] private GameObject menuPanel = null;
@@ -13,7 +16,7 @@ public class MenuManager : MonoBehaviour
     /// </summary>
     /// <param name="matchWasBeingPlayed">If a was being played</param>
     /// <param name="mapWasCleared">If the map was cleared, in case a match was being played</param>
-    public void EnableMenuPanel(bool matchWasBeingPlayed, bool mapWasCleared = false)
+    public void ShowMenuPanel(bool matchWasBeingPlayed, bool mapWasCleared = false)
     {
         // Enable panel
         menuPanel.SetActive(true);
@@ -34,9 +37,9 @@ public class MenuManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Disables menu panel
+    /// Hides menu panel
     /// </summary>
-    public void DisableMenuPanel()
+    public void HideMenuPanel()
     {
         // Disable panel
         menuPanel.SetActive(false);

@@ -6,6 +6,11 @@ using System;
 // Required Components
 [RequireComponent(typeof(RealMapLoaderFromArray))]
 
+/// <summary>
+/// This class loads random maps from a .txt file.
+/// It first creates a char array with every map. Then, each time a new map is required,
+/// it randomly choses one and transforms it to a GameObject.
+/// </summary>
 public class LogicalMapLoaderFromFile : MapLoader
 {
     private RealMapLoaderFromArray realMapLoader;

@@ -2,9 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// This class detects the collision between enemies and the hero
+/// </summary>
 public class EnemyCollisionSystem : NpcCollisionSystem
 {
     public delegate void CollidedWithHero_EventHandler();
+    /// <summary>
+    /// It's invoked when an enemy collides with the hero.
+    /// </summary>
     public event CollidedWithHero_EventHandler CollidedWithHero;
 
     public override void OnCollisionEnter2D(Collision2D col)

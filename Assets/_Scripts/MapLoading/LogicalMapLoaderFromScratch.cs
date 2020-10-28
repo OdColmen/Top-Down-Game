@@ -5,6 +5,11 @@ using UnityEngine;
 // Required Components
 [RequireComponent(typeof(RealMapLoaderFromArray))]
 
+/// <summary>
+/// This class loads a new map from scratch.
+/// Each time a new map is required, it first creates a random logical map (a char array), 
+/// which then it's transformed to a real map (a GameObject).
+/// </summary>
 public class LogicalMapLoaderFromScratch : MapLoader
 {
     private RealMapLoaderFromArray realMapLoader;
@@ -37,7 +42,7 @@ public class LogicalMapLoaderFromScratch : MapLoader
             for (int col = 0; col < colSize; col++)
             {
                 char type = (Random.Range(0, 4) < 3) ? '-' : 'x';
-                
+
                 // Set real value
                 logicalMap[row][col] = type;
             }

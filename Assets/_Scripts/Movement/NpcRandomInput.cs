@@ -7,6 +7,10 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterMovement))]
 [RequireComponent(typeof(NpcCollisionSystem))]
 
+/// <summary>
+/// This class randomly sets a new direction for the game NPCs.
+/// It passes the new direction to the CharacterMovement's Move method.
+/// </summary>
 public class NpcRandomInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;

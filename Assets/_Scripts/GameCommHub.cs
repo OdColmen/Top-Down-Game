@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/// <summary>
+/// Game Communication Hub connects the main game classes; MenuManager, MatchManager and MapLoader,
+/// in order to switch between menu and gameplay
+/// </summary>
 public class GameCommHub : MonoBehaviour
 {
     [SerializeField] private MenuManager menu = null;
@@ -14,24 +18,33 @@ public class GameCommHub : MonoBehaviour
         match.GameOver += GameOver;
 
         // Enable menu & disable game
-        EnableMenuDisableGame(false);
+        ShowMenuStopMatch(false);
     }
-    
+
+    /// <summary>
+    /// Executes game over tasks
+    /// </summary>
     private void GameOver(bool mapWasCleared)
     {
-        EnableMenuDisableGame(true, mapWasCleared);
-    }    
+        ShowMenuStopMatch(true, mapWasCleared);
+    }
 
-    public void EnableGameDisableMenu()
+    /// <summary>
+    /// Hides the menu panel, loads a new map, and starts a new match
+    /// </summary>
+    public void HideMenuStartGame()
     {
-        menu.DisableMenuPanel();
+        menu.HideMenuPanel();
         mapLoader.LoadMap();
         match.StartMatch();
     }
 
-    public void EnableMenuDisableGame(bool matchWasBeingPlayed, bool mapWasCleared = false)
+    /// <summary>
+    /// Shows the menu panel, disables current map, and stops current match
+    /// </summary>
+    public void ShowMenuStopMatch(bool matchWasBeingPlayed, bool mapWasCleared = false)
     {
-        menu.EnableMenuPanel(matchWasBeingPlayed, mapWasCleared);
+        menu.ShowMenuPanel(matchWasBeingPlayed, mapWasCleared);
         mapLoader.DisableMap();
         match.StopMatch();
     }

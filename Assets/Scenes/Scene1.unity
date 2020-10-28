@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 474287210}
   match: {fileID: 1808579061}
-  mapLoader: {fileID: 584965878}
+  mapLoader: {fileID: 854421314}
 --- !u!4 &280181784
 Transform:
   m_ObjectHideFlags: 0
@@ -713,7 +713,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &584965878
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -975,7 +975,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &854421314
 MonoBehaviour:
   m_ObjectHideFlags: 0
