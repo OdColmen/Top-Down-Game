@@ -38,7 +38,7 @@ public class MapLoaderFromScratch : MapLoader
         {
             for (int col = 0; col < colSize; col++)
             {
-                char type = (Random.Range(0, 4) < 3) ? '-' : 'x';
+                char type = (Random.Range(0, 6) < 1) ? 'x' : '-';
 
                 logicalMap[row][col] = type;
             }
