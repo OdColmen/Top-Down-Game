@@ -9,8 +9,10 @@ var hierarchy =
     [ "FileReader", "class_file_reader.html", null ],
     [ "MonoBehaviour", null, [
       [ "CharacterMovement", "class_character_movement.html", null ],
+      [ "EnemyCollisionSystem", "class_enemy_collision_system.html", null ],
       [ "GameCommHub", "class_game_comm_hub.html", null ],
       [ "GameObjectPoolSystem", "class_game_object_pool_system.html", null ],
+      [ "ItemCollisionSystem", "class_item_collision_system.html", null ],
       [ "MapLoader", "class_map_loader.html", [
         [ "MapLoaderFromFile", "class_map_loader_from_file.html", null ],
         [ "MapLoaderFromPrefab", "class_map_loader_from_prefab.html", null ],
@@ -19,10 +21,7 @@ var hierarchy =
       [ "MapLoaderFromArray", "class_map_loader_from_array.html", null ],
       [ "MatchManager", "class_match_manager.html", null ],
       [ "MenuManager", "class_menu_manager.html", null ],
-      [ "NpcCollisionSystem", "class_npc_collision_system.html", [
-        [ "EnemyCollisionSystem", "class_enemy_collision_system.html", null ],
-        [ "ItemCollisionSystem", "class_item_collision_system.html", null ]
-      ] ],
+      [ "NpcCollisionSystem", "class_npc_collision_system.html", null ],
       [ "NpcRandomInput", "class_npc_random_input.html", null ],
       [ "PlayerInput", "class_player_input.html", null ]
     ] ]
