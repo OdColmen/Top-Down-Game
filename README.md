@@ -1,7 +1,7 @@
 # Top Down Game
 
 This is a game created for practicing different subjects:
-* Mainly development via the component pattern (although there is minimal inheritance where it seemed to be fit).
+* Mainly development via the component pattern (although there is minimal inheritance where it deemed fit).
 * XML code documentation, in order to generate a doc, available on /Top Down Game 1/Docs/html/index.html.
 * General GitHub version control practices.
 
