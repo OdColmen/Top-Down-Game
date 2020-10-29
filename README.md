@@ -20,8 +20,10 @@ There are 3 different ways of creating the match maps:
 The composition pattern allows to quickly change between each map loading approach on two steps:
 
 1. On the Hierarchy, on the "Map Loader" GameObject enable only the GameObject of the desired loading approach.
+![Test Image](RepoImages/MapLoadingApproachChange1.png)
 
 2. On the "Game Comm Hub" GameObject, drag the chosen Map Loader GameObject to the "MapLoader" field, on the GameCommHub script.
+![Test Image](RepoImages/MapLoadingApproachChange2.png)
 
 ## Character Movement
 
