@@ -29,7 +29,7 @@ The composition pattern allows to quickly change between each map loading approa
 
 ## Character Movement
 
-The characters' movement is also easily changed through composition. The enemies or items can be controlled like the hero and the hero could move like the NPCs.
+The characters' movement is also easily changed through composition. The enemies or items can be controlled like the hero and the hero can move like the NPCs.
 
 Their collision logic is also easily interchangeable.
 
