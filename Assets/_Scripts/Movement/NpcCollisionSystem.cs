@@ -13,7 +13,7 @@ public class NpcCollisionSystem : MonoBehaviour
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
-        // Invoke an event if collision is against any gameplay object
+        // Invoke an event if collision is against any gameplay object (besides the hero)
         if (col.gameObject.CompareTag("Wall") || col.gameObject.CompareTag("Item")
             || col.gameObject.CompareTag("Enemy"))
         {
