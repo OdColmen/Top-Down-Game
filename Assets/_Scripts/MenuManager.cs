@@ -14,7 +14,7 @@ public class MenuManager : MonoBehaviour
     /// <summary>
     /// Shows menu panel with a different text, depending on the parameters
     /// </summary>
-    /// <param name="matchWasBeingPlayed">If a was being played</param>
+    /// <param name="matchWasBeingPlayed">If a match was being played</param>
     /// <param name="mapWasCleared">If the map was cleared, in case a match was being played</param>
     public void ShowMenuPanel(bool matchWasBeingPlayed, bool mapWasCleared = false)
     {

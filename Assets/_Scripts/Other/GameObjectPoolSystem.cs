@@ -33,7 +33,10 @@ public class GameObjectPoolSystem : MonoBehaviour
     {
         for (int i = 0; i < objectPool.Length; i++)
         {
-            objectPool[i].SetActive(false);
+            if (objectPool[i].activeSelf)
+            {
+                objectPool[i].SetActive(false);
+            }
         }
     }
 

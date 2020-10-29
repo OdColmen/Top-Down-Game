@@ -42,6 +42,8 @@ public class GameCommHub : MonoBehaviour
     /// <summary>
     /// Shows the menu panel, disables current map, and stops current match
     /// </summary>
+    /// <param name="matchWasBeingPlayed">If a match was being played</param>
+    /// <param name="mapWasCleared">If the map was cleared, in case a match was being played</param>
     public void ShowMenuStopMatch(bool matchWasBeingPlayed, bool mapWasCleared = false)
     {
         menu.ShowMenuPanel(matchWasBeingPlayed, mapWasCleared);

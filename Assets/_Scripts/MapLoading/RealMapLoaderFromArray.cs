@@ -3,17 +3,16 @@ using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
-/// This class loads a real GameObject map from a char array.
-/// It first creates a char array with every map. Then, each time a new map is required,
-/// it randomly choses one and transforms it to a GameObject.
+/// This class loads a GameObject map from a given char array.
 /// </summary>
 public class RealMapLoaderFromArray : MonoBehaviour
 {
-    private GameObject map;
-    private GameObjectPoolSystem wallPool;
-
     [SerializeField] private GameObject wallPrefab = null;
     [SerializeField] private Vector3 firstWallPosition = Vector3.zero;
+
+    private GameObject map;
+    private GameObjectPoolSystem wallPool;
+    
     private Vector3 mapOrigin = Vector3.zero;
 
     private float wallWidth;
@@ -21,14 +20,29 @@ public class RealMapLoaderFromArray : MonoBehaviour
 
     void Awake()
     {
-        // Initialize wall pool
+        InitializeMapParent();
         InitializeWallPool();
-
-        // Get wall dimentions
         GetWallDimentions();
+    }
 
-        // Set object at position zero (because current transform will be parent to the walls)
-        transform.position = Vector3.zero;
+    /// <summary>
+    /// Initializes the map's parent
+    /// </summary>
+    private void InitializeMapParent()
+    {
+        map = new GameObject("Current Map");
+        map.gameObject.transform.position = mapOrigin;
+    }
+
+    /// <summary>
+    /// Initializes the wall pool
+    /// </summary>
+    private void InitializeWallPool()
+    {
+        // Initialize pool
+        int poolSize = 128;
+        wallPool = GetComponent<GameObjectPoolSystem>();
+        wallPool.InitializePool(wallPrefab, poolSize, map.transform);
     }
 
     /// <summary>
@@ -36,26 +50,12 @@ public class RealMapLoaderFromArray : MonoBehaviour
     /// </summary>
     private void GetWallDimentions()
     {
-        // Get dimensions
         wallWidth = wallPrefab.GetComponent<SpriteRenderer>().bounds.size.x;
         wallHeight = wallPrefab.GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
     /// <summary>
-    /// Initializes de pool array with of wall game objects
-    /// </summary>
-    private void InitializeWallPool()
-    {
-        int poolSize = 128;
-        map = new GameObject("Current Map");
-        map.gameObject.transform.position = mapOrigin;
-
-        wallPool = GetComponent<GameObjectPoolSystem>();
-        wallPool.InitializePool(wallPrefab, poolSize, map.transform);
-    }
-
-    /// <summary>
-    /// Transforms a map from the given char array to a game object and enables it on game.
+    /// Loads a map by transforming a given char array to a GameObject, and enables it on game.
     /// </summary>
     /// <param name="logicalMap">The map represented in a char array</param>
     /// <param name="wallType">The char value that represents a map wall</param>
@@ -65,7 +65,7 @@ public class RealMapLoaderFromArray : MonoBehaviour
         map.SetActive(true);
 
         // Initialize current wall position
-        Vector3 pos = new Vector3(firstWallPosition.x, firstWallPosition.y, firstWallPosition.z);
+        Vector3 pos = firstWallPosition;
 
         for (int row = 0; row < logicalMap.Length; row++)
         {
@@ -87,13 +87,11 @@ public class RealMapLoaderFromArray : MonoBehaviour
     }
 
     /// <summary>
-    /// Disables the map game object
+    /// Disables the parent map and every single wall in the pool
     /// </summary>
     public void DisableMap()
     {
-        // Disables the main object
         map.SetActive(false);
-        // Disables every object from the map
         wallPool.DisableObjectsInPool();
     }
 }
