@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// This class detects the collision between items and the hero
@@ -15,7 +13,7 @@ public class ItemCollisionSystem : NpcCollisionSystem
 
     public override void OnCollisionEnter2D(Collision2D col)
     {
-        // Check collision with every objects
+        // Check collision with every object
         base.OnCollisionEnter2D(col);
 
         // Invoke an event if collision is against hero

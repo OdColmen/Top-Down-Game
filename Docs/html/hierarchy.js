@@ -12,10 +12,11 @@ var hierarchy =
       [ "GameCommHub", "class_game_comm_hub.html", null ],
       [ "GameObjectPoolSystem", "class_game_object_pool_system.html", null ],
       [ "MapLoader", "class_map_loader.html", [
-        [ "LogicalMapLoaderFromFile", "class_logical_map_loader_from_file.html", null ],
-        [ "LogicalMapLoaderFromScratch", "class_logical_map_loader_from_scratch.html", null ],
-        [ "RealMapLoaderFromPrefab", "class_real_map_loader_from_prefab.html", null ]
+        [ "MapLoaderFromFile", "class_map_loader_from_file.html", null ],
+        [ "MapLoaderFromPrefab", "class_map_loader_from_prefab.html", null ],
+        [ "MapLoaderFromScratch", "class_map_loader_from_scratch.html", null ]
       ] ],
+      [ "MapLoaderFromArray", "class_map_loader_from_array.html", null ],
       [ "MatchManager", "class_match_manager.html", null ],
       [ "MenuManager", "class_menu_manager.html", null ],
       [ "NpcCollisionSystem", "class_npc_collision_system.html", [
@@ -23,7 +24,6 @@ var hierarchy =
         [ "ItemCollisionSystem", "class_item_collision_system.html", null ]
       ] ],
       [ "NpcRandomInput", "class_npc_random_input.html", null ],
-      [ "PlayerInput", "class_player_input.html", null ],
-      [ "RealMapLoaderFromArray", "class_real_map_loader_from_array.html", null ]
+      [ "PlayerInput", "class_player_input.html", null ]
     ] ]
 ];

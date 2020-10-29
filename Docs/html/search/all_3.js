@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['disablemap_12',['DisableMap',['../class_logical_map_loader_from_file.html#a4d2c4d912ca063884b567835cc9aa383',1,'LogicalMapLoaderFromFile.DisableMap()'],['../class_logical_map_loader_from_scratch.html#a88c13a14e60fff347897b3c91d2792be',1,'LogicalMapLoaderFromScratch.DisableMap()'],['../class_map_loader.html#acbc54ab289b1f764ee4cafd782ab0a35',1,'MapLoader.DisableMap()'],['../class_real_map_loader_from_array.html#a6c2dd6e6687ad4e93232b3af122f470e',1,'RealMapLoaderFromArray.DisableMap()'],['../class_real_map_loader_from_prefab.html#a2f05234a58f8a0ac02129a2b04314f13',1,'RealMapLoaderFromPrefab.DisableMap()']]],
+  ['disablemap_12',['DisableMap',['../class_map_loader.html#acbc54ab289b1f764ee4cafd782ab0a35',1,'MapLoader.DisableMap()'],['../class_map_loader_from_array.html#a830696e2271fee4c33168648f0896ce8',1,'MapLoaderFromArray.DisableMap()'],['../class_map_loader_from_file.html#a01793320b12159bff41e8afb77ac29a9',1,'MapLoaderFromFile.DisableMap()'],['../class_map_loader_from_prefab.html#a08b9db7401f4b9ee1cf688d54ed293da',1,'MapLoaderFromPrefab.DisableMap()'],['../class_map_loader_from_scratch.html#a0ef9e3e22113679ec32754199874298b',1,'MapLoaderFromScratch.DisableMap()']]],
   ['disableobjectsinpool_13',['DisableObjectsInPool',['../class_game_object_pool_system.html#ad4e13bd27335e437efb06f681ebe3965',1,'GameObjectPoolSystem']]],
   ['docdirectory_14',['DocDirectory',['../class_doxygen_config.html#aea9ba41fe61487effafbeb77120749f0',1,'DoxygenConfig']]],
   ['doxygenconfig_15',['DoxygenConfig',['../class_doxygen_config.html',1,'']]],

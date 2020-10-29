@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4419322992858318114}
   m_Layer: 0
-  m_Name: Maps by Prefab
+  m_Name: Prefab Maps
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -102,7 +102,7 @@ PrefabInstance:
     - target: {fileID: 3782067181937025079, guid: f1e2f4280f7ed5846936ce25b0459f38,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1e2f4280f7ed5846936ce25b0459f38, type: 3}

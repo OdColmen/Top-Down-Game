@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loadmap_150',['LoadMap',['../class_logical_map_loader_from_file.html#a9142434332be8d59ffb155b8b9c4ef62',1,'LogicalMapLoaderFromFile.LoadMap()'],['../class_logical_map_loader_from_scratch.html#acb32214268d9529f6622f67907e1a8a5',1,'LogicalMapLoaderFromScratch.LoadMap()'],['../class_map_loader.html#a5efa0bcda9682f00232b566106763a7e',1,'MapLoader.LoadMap()'],['../class_real_map_loader_from_array.html#a860b35a84ae4486dbdbf3a421d81a031',1,'RealMapLoaderFromArray.LoadMap()'],['../class_real_map_loader_from_prefab.html#ad43bae221f28731ba403febde6cac30e',1,'RealMapLoaderFromPrefab.LoadMap()']]]
+  ['loadmap_150',['LoadMap',['../class_map_loader.html#a5efa0bcda9682f00232b566106763a7e',1,'MapLoader.LoadMap()'],['../class_map_loader_from_array.html#ab78b8faa9de0288d2559c346ea4f6952',1,'MapLoaderFromArray.LoadMap()'],['../class_map_loader_from_file.html#a027211105d548b125da37bff4fa85cbc',1,'MapLoaderFromFile.LoadMap()'],['../class_map_loader_from_prefab.html#a92f139df8a59fde4cc03e89d7aba3865',1,'MapLoaderFromPrefab.LoadMap()'],['../class_map_loader_from_scratch.html#a5da798b058c0aecd783918420fae0506',1,'MapLoaderFromScratch.LoadMap()']]]
 ];

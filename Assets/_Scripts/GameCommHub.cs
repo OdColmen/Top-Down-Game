@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// Game Communication Hub connects the main game classes; MenuManager, MatchManager and MapLoader,
@@ -17,7 +15,7 @@ public class GameCommHub : MonoBehaviour
         // Subscribe to game over event
         match.GameOver += GameOver;
 
-        // Enable menu & disable game
+        // Show menu & disable game
         ShowMenuStopMatch(false);
     }
 

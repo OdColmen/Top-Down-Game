@@ -1,31 +1,28 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using System;
 
 // Required Components
-[RequireComponent(typeof(RealMapLoaderFromArray))]
+[RequireComponent(typeof(MapLoaderFromArray))]
 
 /// <summary>
 /// This class loads random maps from a .txt file.
-/// It first creates a char array with every map. Then, each time a new map is required,
-/// it randomly choses one and transforms it to a GameObject.
 /// </summary>
-public class LogicalMapLoaderFromFile : MapLoader
+public class MapLoaderFromFile : MapLoader
 {
-    private RealMapLoaderFromArray realMapLoader;
+    private MapLoaderFromArray mapLoader;
 
-    private FileReader fr;
+    // logicalMaps: An array of maps, where each map is represented in a char[][] array
+    private char[][][] logicalMaps;
     
     private readonly int rowSize = 16;
     private readonly int colSize = 16;
 
-    private char[][][] logicalMaps;
+    private FileReader fr;
 
     void Awake()
     {
-        // Get RealMapLoaderFromArray component
-        realMapLoader = GetComponent<RealMapLoaderFromArray>();
+        // Get MapLoaderFromArray component
+        mapLoader = GetComponent<MapLoaderFromArray>();
 
         // Create FileReader object
         fr = new FileReader();
@@ -60,9 +57,6 @@ public class LogicalMapLoaderFromFile : MapLoader
                 totalMaps++;
             }
         }
-
-        //Console.WriteLine("Total maps: " + totalMaps);
-        //Console.WriteLine("Rows per map: " + (fileLines.Length - totalMaps + 1) / totalMaps);
 
         // Validate correct number of rows
         if ((fileLines.Length - totalMaps + 1) / totalMaps != rowSize)
@@ -107,7 +101,7 @@ public class LogicalMapLoaderFromFile : MapLoader
                 // Validate correct number of columns
                 if (logicalMaps[map][row].Length != colSize)
                 {
-                    Debug.Log("Rows per map (" + logicalMaps[map][row].Length + ") should be " + colSize);
+                    Debug.Log("Cols per map (" + logicalMaps[map][row].Length + ") should be " + colSize);
                     return;
                 }
             }
@@ -115,15 +109,12 @@ public class LogicalMapLoaderFromFile : MapLoader
     }
 
     /// <summary>
-    /// Loads a random map and enables it on game
+    /// Loads a random map
     /// </summary>
     public override void LoadMap()
     {
-        // Get random between 0-totalMaps
         int randomMap = UnityEngine.Random.Range(0, logicalMaps.Length);
-
-        // Load real map
-        realMapLoader.LoadMap(logicalMaps[randomMap], 'x');
+        mapLoader.LoadMap(logicalMaps[randomMap], 'x');
     }
 
     /// <summary>
@@ -131,6 +122,6 @@ public class LogicalMapLoaderFromFile : MapLoader
     /// </summary>
     public override void DisableMap()
     {
-        realMapLoader.DisableMap();
+        mapLoader.DisableMap();
     }
 }

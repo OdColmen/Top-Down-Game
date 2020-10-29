@@ -1,11 +1,9 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
 /// This class loads a GameObject map from a given char array.
 /// </summary>
-public class RealMapLoaderFromArray : MonoBehaviour
+public class MapLoaderFromArray : MonoBehaviour
 {
     [SerializeField] private GameObject wallPrefab = null;
     [SerializeField] private Vector3 firstWallPosition = Vector3.zero;
@@ -55,7 +53,7 @@ public class RealMapLoaderFromArray : MonoBehaviour
     }
 
     /// <summary>
-    /// Loads a map by transforming a given char array to a GameObject, and enables it on game.
+    /// Loads a map by transforming a given char array to a GameObject, and enables it on stage.
     /// </summary>
     /// <param name="logicalMap">The map represented in a char array</param>
     /// <param name="wallType">The char value that represents a map wall</param>

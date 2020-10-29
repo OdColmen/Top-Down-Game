@@ -1,28 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Required Components
-[RequireComponent(typeof(RealMapLoaderFromArray))]
+[RequireComponent(typeof(MapLoaderFromArray))]
 
 /// <summary>
 /// This class loads a new map from scratch.
-/// Each time a new map is required, it first creates a random logical map (a char array), 
-/// which then it's transformed to a real map (a GameObject).
 /// </summary>
-public class LogicalMapLoaderFromScratch : MapLoader
+public class MapLoaderFromScratch : MapLoader
 {
-    private RealMapLoaderFromArray realMapLoader;
+    private MapLoaderFromArray mapLoader;
+
+    // logicalMap: The map representation in a char[][] array
+    private char[][] logicalMap;
 
     private readonly int rowSize = 16;
     private readonly int colSize = 16;
 
-    private char[][] logicalMap;
-
     void Awake()
     {
-        // Get RealMapLoaderFromArray component
-        realMapLoader = GetComponent<RealMapLoaderFromArray>();
+        // Get MapLoaderFromArray component
+        mapLoader = GetComponent<MapLoaderFromArray>();
 
         // Set size of logicalMap
         logicalMap = new char[rowSize][];
@@ -33,7 +30,7 @@ public class LogicalMapLoaderFromScratch : MapLoader
     }
 
     /// <summary>
-    /// Creates a random map on the char array[][] variable "logicalMap"
+    /// Loads a new map to the logicalMap variable
     /// </summary>
     private void CreateMapFromScratch()
     {
@@ -43,22 +40,19 @@ public class LogicalMapLoaderFromScratch : MapLoader
             {
                 char type = (Random.Range(0, 4) < 3) ? '-' : 'x';
 
-                // Set real value
                 logicalMap[row][col] = type;
             }
         }
     }
 
     /// <summary>
-    /// Loads a new map from scratch and enables it on game
+    /// Creates a new map from scratch and calls the MapLoaderFromArray class to
+    /// enable it on stage.
     /// </summary>
     public override void LoadMap()
     {
-        // Create map from scratch
         CreateMapFromScratch();
-
-        // Load real map
-        realMapLoader.LoadMap(logicalMap, 'x');
+        mapLoader.LoadMap(logicalMap, 'x');
     }
 
     /// <summary>
@@ -66,6 +60,6 @@ public class LogicalMapLoaderFromScratch : MapLoader
     /// </summary>
     public override void DisableMap()
     {
-        realMapLoader.DisableMap();
+        mapLoader.DisableMap();
     }
 }

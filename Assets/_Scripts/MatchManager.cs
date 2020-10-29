@@ -1,10 +1,8 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 /// <summary>
-/// This class manages the hero and NPC game objects, the item collection logic,
-/// and invokes the GameOver event
+/// This class manages the hero and NPC GameObjects, the item collection logic,
+/// and invokes the GameOver event.
 /// </summary>
 public class MatchManager : MonoBehaviour
 {
@@ -118,17 +116,15 @@ public class MatchManager : MonoBehaviour
 
         if (allItemsWereCollected)
         {
-            // Fire succesful game over
             GameOver?.Invoke(true);
         }
     }
 
     /// <summary>
-    /// Invokes the Game Over event
+    /// Invokes the Game Over event. Intented to be used when the map was not cleared.
     /// </summary>
     private void Die()
     {
-        // Fire unsuccesful game over
         GameOver?.Invoke(false);
     }
 }

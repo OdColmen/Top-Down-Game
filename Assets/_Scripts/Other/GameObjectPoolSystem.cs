@@ -1,17 +1,18 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
+/// <summary>
+/// This class handles a GameObject pool by disabling it and enabling it when needed.
+/// </summary>
 public class GameObjectPoolSystem : MonoBehaviour
 {
     private GameObject[] objectPool;
 
     /// <summary>
-    /// Initializes a GameObject pool
+    /// Initializes the GameObject pool
     /// </summary>
     /// <param name="prefab">Object to be stored in the pool</param>
     /// <param name="poolSize">Size of pool</param>
-    /// <param name="poolSize">Objects' parent</param>
+    /// <param name="parent">Objects' parent</param>
     public void InitializePool(GameObject prefab, int poolSize, Transform parent = null)
     {
         // Set pool size

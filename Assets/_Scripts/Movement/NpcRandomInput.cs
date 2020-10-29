@@ -1,7 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Required Components
 [RequireComponent(typeof(CharacterMovement))]
@@ -23,10 +20,8 @@ public class NpcRandomInput : MonoBehaviour
         // Initialize random
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        // Get CharacterMovement component
+        // Get components
         characterMovement = GetComponent<CharacterMovement>();
-
-        // Get ItemCollisionSystem component
         collisions = GetComponent<NpcCollisionSystem>();
 
         // Subscribe to "ItemCollidedWithAnything" event
@@ -35,13 +30,11 @@ public class NpcRandomInput : MonoBehaviour
 
     void OnEnable()
     {
-        // Set new direction when enabling current object
         SetNewDirection();
     }
 
     void Update()
     {
-        // Move character
         characterMovement.Move(direction);
     }
 
@@ -50,10 +43,9 @@ public class NpcRandomInput : MonoBehaviour
     /// </summary>
     public void SetNewDirection()
     {
-        // Get random between 0-7
         int random = Random.Range(0, 8);
 
-        // Choose one of 8 possible directions and set it as the new direction
+        // Choose one of 8 possible directions and set it as the new one
         switch (random)
         {
             case 0:
