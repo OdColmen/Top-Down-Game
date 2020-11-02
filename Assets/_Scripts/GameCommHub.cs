@@ -48,4 +48,10 @@ public class GameCommHub : MonoBehaviour
         mapLoader.DisableMap();
         match.StopMatch();
     }
+
+    private void OnDestroy()
+    {
+        // Unubscribe to game over event
+        match.GameOver += GameOver;
+    }
 }

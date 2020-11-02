@@ -127,4 +127,17 @@ public class MatchManager : MonoBehaviour
     {
         GameOver?.Invoke(false);
     }
+
+    private void OnDestroy()
+    {
+        for (int i = 0; i < items.Length; i++)
+        {
+            items[i].GetComponent<ItemCollisionSystem>().CollidedWithHero -= CollectItem;
+        }
+
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            enemies[i].GetComponent<EnemyCollisionSystem>().CollidedWithHero -= Die;
+        }
+    }
 }
