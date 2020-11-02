@@ -78,4 +78,10 @@ public class NpcRandomInput : MonoBehaviour
                 break;
         }
     }
+
+    private void OnDestroy()
+    {
+        // Unsubscribe to "ItemCollidedWithAnything" event
+        collisions.CollidedWithAnything -= SetNewDirection;
+    }
 }
