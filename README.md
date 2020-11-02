@@ -23,7 +23,7 @@ The composition pattern allows to quickly change between each map loading approa
 
 ![Test Image](RepoImages/MapLoadingApproachChange1.PNG)
 
-2. On the "Game Comm Hub" GameObject, drag the chosen Map Loader GameObject to the "MapLoader" field, on the GameCommHub script.
+2. On the "Game Comm Hub" GameObject, drag the chosen map loader GameObject to the "Map Loader" field, on the "GameCommHub" script.
 
 ![Test Image](RepoImages/MapLoadingApproachChange2.PNG)
 
