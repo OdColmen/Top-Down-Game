@@ -1,7 +1,7 @@
 # Top Down Game
 
 This is a game created for practicing different subjects:
-* Mainly development via the component pattern (although there is minimal inheritance where it deemed fit).
+* Mainly development via the component pattern (Although there is minimal inheritance where it deemed fit: The three classes that handle the map loading and disabling inherit from MapLoader, so polymorphism can be applied on GameCommHub).
 * XML code documentation, in order to generate a doc, available on /Top Down Game 1/Docs/html/index.html.
 * General GitHub version control practices.
 
