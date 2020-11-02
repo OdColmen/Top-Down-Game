@@ -6,11 +6,11 @@
 /// </summary>
 public class MatchManager : MonoBehaviour
 {
-    public delegate void GameOver_EventHandler(bool mapWasCleared);
+    public delegate void GameOverEventHandler(bool mapWasCleared);
     /// <summary>
     /// It's invoked when the player wins or loses a match.
     /// </summary>
-    public event GameOver_EventHandler GameOver;
+    public event GameOverEventHandler GameOver;
 
     [SerializeField] private GameObject hero = null;
     [SerializeField] private GameObject[] items = null;

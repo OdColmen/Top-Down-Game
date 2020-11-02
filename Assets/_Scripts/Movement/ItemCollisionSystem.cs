@@ -5,11 +5,11 @@
 /// </summary>
 public class ItemCollisionSystem : MonoBehaviour
 {
-    public delegate void CollidedWithHero_EventHandler(GameObject obj);
+    public delegate void CollidedWithHeroEventHandler(GameObject obj);
     /// <summary>
     /// It's invoked when an item collides with the hero.
     /// </summary>
-    public event CollidedWithHero_EventHandler CollidedWithHero;
+    public event CollidedWithHeroEventHandler CollidedWithHero;
 
     public virtual void OnCollisionEnter2D(Collision2D col)
     {
