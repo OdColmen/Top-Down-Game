@@ -2,7 +2,7 @@
 
 // Required Components
 [RequireComponent(typeof(CharacterMovement))]
-[RequireComponent(typeof(NpcCollisionSystem))]
+[RequireComponent(typeof(CollisionSystemWithoutObjectInfo))]
 
 /// <summary>
 /// This class randomly sets a new direction for the game NPCs.
@@ -11,7 +11,7 @@
 public class NpcRandomInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;
-    private NpcCollisionSystem collisions;
+    private CollisionSystemWithoutObjectInfo collisions;
 
     private Vector3 direction;
 
@@ -22,10 +22,10 @@ public class NpcRandomInput : MonoBehaviour
 
         // Get components
         characterMovement = GetComponent<CharacterMovement>();
-        collisions = GetComponent<NpcCollisionSystem>();
+        collisions = GetComponent<CollisionSystemWithoutObjectInfo>();
 
         // Subscribe to "ItemCollidedWithAnything" event
-        collisions.CollidedWithAnything += SetNewDirection;
+        collisions.CollidedWithSomething += SetNewDirection;
     }
 
     void OnEnable()
@@ -82,6 +82,6 @@ public class NpcRandomInput : MonoBehaviour
     private void OnDestroy()
     {
         // Unsubscribe to "ItemCollidedWithAnything" event
-        collisions.CollidedWithAnything -= SetNewDirection;
+        collisions.CollidedWithSomething -= SetNewDirection;
     }
 }

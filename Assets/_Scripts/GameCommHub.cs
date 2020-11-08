@@ -52,6 +52,6 @@ public class GameCommHub : MonoBehaviour
     private void OnDestroy()
     {
         // Unubscribe to game over event
-        match.GameOver += GameOver;
+        match.GameOver -= GameOver;
     }
 }
