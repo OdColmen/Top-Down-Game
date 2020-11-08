@@ -16,8 +16,8 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
         // Create FileReader object
         fr = new FileReader();
 
-        // Read maps from file
-        ReadMapsFromFile();
+        //
+        InitializeLogicalMaps();
     }
 
     /// <summary>
@@ -52,16 +52,25 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
         int map = 0;
         int row = 0;
 
+        // Count number of rows and initialize the second dimention of mapLine's array
+        for (int i = 0; i < fileLines.Length; i++)
+        {
+            if (fileLines[i].CompareTo("") != 0)
+            {
+                row++;
+            }
+            else
+            {
+                mapLines[map] = new string[row];
+                map++;
+                row = 0;
+            }
+        }
+        mapLines[map] = new string[row];
 
-
-
-
-
-
-
-
-        //TODO do not use the exact value 16 here. Fix this
-        mapLines[map] = new string[16];
+        map = 0;
+        row = 0;
+        // Store real map rows on mapLines array
         for (int i = 0; i < fileLines.Length; i++)
         {
             if (fileLines[i].CompareTo("") != 0)
@@ -73,47 +82,22 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
             {
                 map++;
                 row = 0;
-                mapLines[map] = new string[16];
             }
         }
-
-
-
-
-
-
-
-
-
 
         // Get real map values
         LogicalMaps = new char[totalMaps][][];
         for (map = 0; map < mapLines.Length; map++)
         {
-            LogicalMaps[map] = new char[16][];
-            for (row = 0; row < 16; row++)
+            int rowSize = mapLines[map].Length;
+
+            LogicalMaps[map] = new char[rowSize][];
+            for (row = 0; row < rowSize; row++)
             {
                 // Get real values
                 LogicalMaps[map][row] = mapLines[map][row].ToCharArray();
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        InitializeMapLoader2(totalMaps, 16, 16);
     }
 
     /// <summary>
@@ -121,8 +105,14 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
     /// </summary>
     public override char[][] LoadLogicalMap()
     {
-        int randomMap = rand.Next(0, TotalMaps);
+        int randomMap = rand.Next(0, LogicalMaps.Length);
 
         return LogicalMaps[randomMap];
+    }
+
+    public override void InitializeLogicalMaps()
+    {
+        // Read maps from file
+        ReadMapsFromFile();
     }
 }

@@ -1379,6 +1379,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c438792243de3e64295744c2306f9213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalRows: 16
+  totalColumns: 16
 --- !u!4 &1247087162
 Transform:
   m_ObjectHideFlags: 0
