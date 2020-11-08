@@ -13,15 +13,22 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
     {
         rand = new System.Random();
 
-        // Create FileReader object
         fr = new FileReader();
 
-        //
         InitializeLogicalMaps();
     }
 
     /// <summary>
-    /// Reads every map from a file
+    /// Implements the LogicalMaps initialization by reading the maps from a file
+    /// </summary>
+    public override void InitializeLogicalMaps()
+    {
+        // Read maps from file
+        ReadMapsFromFile();
+    }
+
+    /// <summary>
+    /// Reads file and stores every map on LogicalMaps
     /// </summary>
     private void ReadMapsFromFile()
     {
@@ -101,18 +108,12 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
     }
 
     /// <summary>
-    /// Returns a random map the previously read ones
+    /// Returns a random map from the previously read ones
     /// </summary>
     public override char[][] LoadLogicalMap()
     {
         int randomMap = rand.Next(0, LogicalMaps.Length);
 
         return LogicalMaps[randomMap];
-    }
-
-    public override void InitializeLogicalMaps()
-    {
-        // Read maps from file
-        ReadMapsFromFile();
     }
 }

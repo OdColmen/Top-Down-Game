@@ -5,7 +5,7 @@
 /// </summary>
 public class MapLoaderFromArray : MapLoader
 {
-    [SerializeField] private LogicalMapLoader logicalMapLoader = null;
+    private LogicalMapLoader logicalMapLoader = null;
 
     [SerializeField] private GameObject wallPrefab = null;
     [SerializeField] private Vector3 firstWallPosition = Vector3.zero;
@@ -24,8 +24,7 @@ public class MapLoaderFromArray : MapLoader
         InitializeWallPool();
         GetWallDimentions();
 
-        LogicalMapLoader logicalMapLoader = GetComponent<LogicalMapLoader>();
-        //logicalMapLoader.InitializeMapLoader(1, 16, 16);
+        logicalMapLoader = GetComponent<LogicalMapLoader>();
     }
 
     /// <summary>
@@ -58,16 +57,20 @@ public class MapLoaderFromArray : MapLoader
     }
 
     /// <summary>
-    /// Loads a map by transforming a given char array to a GameObject, and enables it on stage.
+    /// Loads a map to stage. 
     /// </summary>
-    /// <param name="logicalMap">The map represented in a char array</param>
-    /// <param name="wallType">The char value that represents a map wall</param>
+    /// <remarks>
+    /// First it loads a logical map (char[][]) from the LogicalMapLoader component. 
+    /// Then, it transforms the logical map into a real one (GameObject) and enables it on stage.
+    /// </remarks>
     public override void LoadMap()
     {
+        // ----- LOAD LOGICAL MAP TO VARIABLE -----
+        
         char wallType = 'x';
         char[][] logicalMap = logicalMapLoader.LoadLogicalMap();
 
-        //----------------------------------------
+        // ----- ENABLE REAL MAP ON STAGE -----
 
         // Enable map
         map.SetActive(true);

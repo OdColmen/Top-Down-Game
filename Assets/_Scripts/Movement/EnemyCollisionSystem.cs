@@ -5,7 +5,7 @@
 /// </summary>
 public class EnemyCollisionSystem : MonoBehaviour
 {
-    public delegate void CollidedWithHeroEventHandler();
+    public delegate void CollidedWithHeroEventHandler(GameObject obj);
     /// <summary>
     /// It's invoked when an enemy collides with the hero.
     /// </summary>
@@ -16,7 +16,7 @@ public class EnemyCollisionSystem : MonoBehaviour
         // Invoke an event if collision is against hero
         if (col.gameObject.CompareTag("Hero"))
         {
-            CollidedWithHero?.Invoke();
+            CollidedWithHero?.Invoke(gameObject);
         }
     }
 }

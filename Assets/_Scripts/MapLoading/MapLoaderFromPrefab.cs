@@ -23,7 +23,7 @@ public class MapLoaderFromPrefab : MapLoader
     }
 
     /// <summary>
-    /// Initializes parent of all the maps
+    /// Initializes the parent of all the maps
     /// </summary>
     private void InitializeMapsParent()
     {

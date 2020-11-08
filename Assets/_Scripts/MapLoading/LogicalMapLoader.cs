@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
+
 /// <summary>
-/// This interface defines the methods for loading and disabling maps.
+/// This abstract class defines the methods for loading logical maps in char arrays,
+/// so they can be transformed into real GameObject maps somewhere else
 /// </summary>
 public abstract class LogicalMapLoader : MonoBehaviour
 {
