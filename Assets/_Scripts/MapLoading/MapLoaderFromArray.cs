@@ -3,8 +3,10 @@
 /// <summary>
 /// This class loads a GameObject map from a given char array.
 /// </summary>
-public class MapLoaderFromArray : MonoBehaviour
+public class MapLoaderFromArray : MapLoader
 {
+    [SerializeField] private LogicalMapLoader logicalMapLoader = null;
+
     [SerializeField] private GameObject wallPrefab = null;
     [SerializeField] private Vector3 firstWallPosition = Vector3.zero;
 
@@ -21,6 +23,9 @@ public class MapLoaderFromArray : MonoBehaviour
         InitializeMapParent();
         InitializeWallPool();
         GetWallDimentions();
+
+        LogicalMapLoader logicalMapLoader = GetComponent<LogicalMapLoader>();
+        //logicalMapLoader.InitializeMapLoader(1, 16, 16);
     }
 
     /// <summary>
@@ -57,8 +62,13 @@ public class MapLoaderFromArray : MonoBehaviour
     /// </summary>
     /// <param name="logicalMap">The map represented in a char array</param>
     /// <param name="wallType">The char value that represents a map wall</param>
-    public void LoadMap(char[][] logicalMap, char wallType)
+    public override void LoadMap()
     {
+        char wallType = 'x';
+        char[][] logicalMap = logicalMapLoader.LoadLogicalMap();
+
+        //----------------------------------------
+
         // Enable map
         map.SetActive(true);
 
@@ -87,7 +97,7 @@ public class MapLoaderFromArray : MonoBehaviour
     /// <summary>
     /// Disables the parent map and every single wall in the pool
     /// </summary>
-    public void DisableMap()
+    public override void DisableMap()
     {
         map.SetActive(false);
         wallPool.DisableObjectsInPool();

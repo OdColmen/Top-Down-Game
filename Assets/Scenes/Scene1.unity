@@ -307,7 +307,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   menu: {fileID: 474287210}
   match: {fileID: 1808579061}
-  mapLoader: {fileID: 1247087161}
+  mapLoader: {fileID: 1247087160}
 --- !u!4 &280181784
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,6 +1064,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a3fb5b77831e42b20d3d39f4b4315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logicalMapLoader: {fileID: 854421314}
   wallPrefab: {fileID: 3159955400828785027, guid: 66870374e9df72840a3bccafb294cadd,
     type: 3}
   firstWallPosition: {x: -30, y: 30, z: 0}
@@ -1362,6 +1363,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d1a3fb5b77831e42b20d3d39f4b4315, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  logicalMapLoader: {fileID: 1247087161}
   wallPrefab: {fileID: 3159955400828785027, guid: 66870374e9df72840a3bccafb294cadd,
     type: 3}
   firstWallPosition: {x: -30, y: 30, z: 0}

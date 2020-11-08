@@ -132,12 +132,18 @@ public class MatchManager : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            items[i].GetComponent<ItemCollisionSystem>().CollidedWithHero -= CollectItem;
+            if (items[i] != null)
+            {
+                items[i].GetComponent<ItemCollisionSystem>().CollidedWithHero -= CollectItem;
+            }
         }
 
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<EnemyCollisionSystem>().CollidedWithHero -= Die;
+            if (enemies[i] != null)
+            {
+                enemies[i].GetComponent<EnemyCollisionSystem>().CollidedWithHero -= Die;
+            }
         }
     }
 }
