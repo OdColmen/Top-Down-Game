@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['gameover_196',['GameOver',['../class_match_manager.html#af6386083b251eae9b7b23095bba87164',1,'MatchManager']]]
+  ['collidedwithgivenobject_229',['CollidedWithGivenObject',['../class_collision_system_with_object_info.html#a993ff2e6ee3a902b7b3ccc8fb8b9fb7c',1,'CollisionSystemWithObjectInfo']]],
+  ['collidedwithsomething_230',['CollidedWithSomething',['../class_collision_system_without_object_info.html#a7c69e953ab58e91652b92167ee161529',1,'CollisionSystemWithoutObjectInfo']]]
 ];

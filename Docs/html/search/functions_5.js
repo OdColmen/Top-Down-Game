@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['hidemenupanel_144',['HideMenuPanel',['../class_menu_manager.html#abc268b68fe1fbfbaf0f290f8a5c8ce31',1,'MenuManager']]],
-  ['hidemenustartgame_145',['HideMenuStartGame',['../class_game_comm_hub.html#a993b197a98c59a840d71bd74f1ed9707',1,'GameCommHub']]]
+  ['gameover_5feventhandler_172',['GameOver_EventHandler',['../class_match_manager.html#ade61bd60bcab05b9fbe088ad1927f199',1,'MatchManager']]]
 ];

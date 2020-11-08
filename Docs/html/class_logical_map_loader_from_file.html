@@ -97,25 +97,31 @@ Inheritance diagram for LogicalMapLoaderFromFile:</div>
  <div class="center">
   <img src="class_logical_map_loader_from_file.png" usemap="#LogicalMapLoaderFromFile_map" alt=""/>
   <map id="LogicalMapLoaderFromFile_map" name="LogicalMapLoaderFromFile_map">
-<area href="class_map_loader.html" title="This abstract class defines the methods for loading and disabling maps." alt="MapLoader" shape="rect" coords="0,56,168,80"/>
+<area href="class_logical_map_loader.html" title="This abstract class defines the methods for loading logical maps in char arrays, so they can be trans..." alt="LogicalMapLoader" shape="rect" coords="0,56,168,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a9142434332be8d59ffb155b8b9c4ef62"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_file.html#a9142434332be8d59ffb155b8b9c4ef62">LoadMap</a> ()</td></tr>
-<tr class="memdesc:a9142434332be8d59ffb155b8b9c4ef62"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a random map and enables it on game  <a href="class_logical_map_loader_from_file.html#a9142434332be8d59ffb155b8b9c4ef62">More...</a><br /></td></tr>
-<tr class="separator:a9142434332be8d59ffb155b8b9c4ef62"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d2c4d912ca063884b567835cc9aa383"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_file.html#a4d2c4d912ca063884b567835cc9aa383">DisableMap</a> ()</td></tr>
-<tr class="memdesc:a4d2c4d912ca063884b567835cc9aa383"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables current map  <a href="class_logical_map_loader_from_file.html#a4d2c4d912ca063884b567835cc9aa383">More...</a><br /></td></tr>
-<tr class="separator:a4d2c4d912ca063884b567835cc9aa383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a196b2d2db8ab06b106e615ea32893ebe"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_file.html#a196b2d2db8ab06b106e615ea32893ebe">InitializeLogicalMaps</a> ()</td></tr>
+<tr class="memdesc:a196b2d2db8ab06b106e615ea32893ebe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Implements the LogicalMaps initialization by reading the maps from a file  <a href="class_logical_map_loader_from_file.html#a196b2d2db8ab06b106e615ea32893ebe">More...</a><br /></td></tr>
+<tr class="separator:a196b2d2db8ab06b106e615ea32893ebe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8ca197e4769ba42e6f1e2500bf551a52"><td class="memItemLeft" align="right" valign="top">override char[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_file.html#a8ca197e4769ba42e6f1e2500bf551a52">LoadLogicalMap</a> ()</td></tr>
+<tr class="memdesc:a8ca197e4769ba42e6f1e2500bf551a52"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a random map from the previously read ones  <a href="class_logical_map_loader_from_file.html#a8ca197e4769ba42e6f1e2500bf551a52">More...</a><br /></td></tr>
+<tr class="separator:a8ca197e4769ba42e6f1e2500bf551a52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header properties_class_logical_map_loader"><td colspan="2" onclick="javascript:toggleInherit('properties_class_logical_map_loader')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_logical_map_loader.html">LogicalMapLoader</a></td></tr>
+<tr class="memitem:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="memItemLeft" align="right" valign="top">char[][][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader.html#a834058a7c5c643d563664014b1bb1b30">LogicalMaps</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical representation of game maps  <a href="class_logical_map_loader.html#a834058a7c5c643d563664014b1bb1b30">More...</a><br /></td></tr>
+<tr class="separator:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class loads random maps from a .txt file. </p>
-<p>It first creates a char array with every map. Then, each time a new map is required, it randomly choses one and transforms it to a GameObject.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a4d2c4d912ca063884b567835cc9aa383"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4d2c4d912ca063884b567835cc9aa383">&#9670;&nbsp;</a></span>DisableMap()</h2>
+<a id="a196b2d2db8ab06b106e615ea32893ebe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a196b2d2db8ab06b106e615ea32893ebe">&#9670;&nbsp;</a></span>InitializeLogicalMaps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +130,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void LogicalMapLoaderFromFile.DisableMap </td>
+          <td class="memname">override void LogicalMapLoaderFromFile.InitializeLogicalMaps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -137,14 +143,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Disables current map </p>
+<p>Implements the LogicalMaps initialization by reading the maps from a file </p>
 
-<p>Implements <a class="el" href="class_map_loader.html#acbc54ab289b1f764ee4cafd782ab0a35">MapLoader</a>.</p>
+<p>Implements <a class="el" href="class_logical_map_loader.html#a59ebdf9bd67f70de9b0598f5decc4b0b">LogicalMapLoader</a>.</p>
 
 </div>
 </div>
-<a id="a9142434332be8d59ffb155b8b9c4ef62"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9142434332be8d59ffb155b8b9c4ef62">&#9670;&nbsp;</a></span>LoadMap()</h2>
+<a id="a8ca197e4769ba42e6f1e2500bf551a52"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8ca197e4769ba42e6f1e2500bf551a52">&#9670;&nbsp;</a></span>LoadLogicalMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +159,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void LogicalMapLoaderFromFile.LoadMap </td>
+          <td class="memname">override char [][] LogicalMapLoaderFromFile.LoadLogicalMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -166,9 +172,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Loads a random map and enables it on game </p>
+<p>Returns a random map from the previously read ones </p>
 
-<p>Implements <a class="el" href="class_map_loader.html#a5efa0bcda9682f00232b566106763a7e">MapLoader</a>.</p>
+<p>Implements <a class="el" href="class_logical_map_loader.html#a4db458c42c91b4cfbc9666d9392ebce7">LogicalMapLoader</a>.</p>
 
 </div>
 </div>
@@ -181,7 +187,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_logical_map_loader_from_file.html">LogicalMapLoaderFromFile</a></li>
-    <li class="footer">Generated on Thu Oct 29 2020 06:07:39 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sun Nov 8 2020 10:54:50 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

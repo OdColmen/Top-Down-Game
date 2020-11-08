@@ -95,74 +95,80 @@ $(document).ready(function(){initNavTree('class_map_loader_from_array.html','');
 Inheritance diagram for MapLoaderFromArray:</div>
 <div class="dyncontent">
  <div class="center">
-  <img src="class_map_loader_from_array.png" alt=""/>
- </div></div>
+  <img src="class_map_loader_from_array.png" usemap="#MapLoaderFromArray_map" alt=""/>
+  <map id="MapLoaderFromArray_map" name="MapLoaderFromArray_map">
+<area href="class_map_loader.html" title="This abstract class defines the methods for loading and disabling maps." alt="MapLoader" shape="rect" coords="0,56,139,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab78b8faa9de0288d2559c346ea4f6952"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_loader_from_array.html#ab78b8faa9de0288d2559c346ea4f6952">LoadMap</a> (char[][] logicalMap, char wallType)</td></tr>
-<tr class="memdesc:ab78b8faa9de0288d2559c346ea4f6952"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a map by transforming a given char array to a GameObject, and enables it on stage.  <a href="class_map_loader_from_array.html#ab78b8faa9de0288d2559c346ea4f6952">More...</a><br /></td></tr>
-<tr class="separator:ab78b8faa9de0288d2559c346ea4f6952"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a830696e2271fee4c33168648f0896ce8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_loader_from_array.html#a830696e2271fee4c33168648f0896ce8">DisableMap</a> ()</td></tr>
-<tr class="memdesc:a830696e2271fee4c33168648f0896ce8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the parent map and every single wall in the pool  <a href="class_map_loader_from_array.html#a830696e2271fee4c33168648f0896ce8">More...</a><br /></td></tr>
-<tr class="separator:a830696e2271fee4c33168648f0896ce8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af644ed0ce77aaa60830459396192abb0"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_loader_from_array.html#af644ed0ce77aaa60830459396192abb0">LoadMap</a> ()</td></tr>
+<tr class="memdesc:af644ed0ce77aaa60830459396192abb0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads a map to stage.  <a href="class_map_loader_from_array.html#af644ed0ce77aaa60830459396192abb0">More...</a><br /></td></tr>
+<tr class="separator:af644ed0ce77aaa60830459396192abb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac47dc0ea7b5e86e0407f154ea89b8843"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_map_loader_from_array.html#ac47dc0ea7b5e86e0407f154ea89b8843">DisableMap</a> ()</td></tr>
+<tr class="memdesc:ac47dc0ea7b5e86e0407f154ea89b8843"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables the parent map and every single wall in the pool  <a href="class_map_loader_from_array.html#ac47dc0ea7b5e86e0407f154ea89b8843">More...</a><br /></td></tr>
+<tr class="separator:ac47dc0ea7b5e86e0407f154ea89b8843"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class loads a GameObject map from a given char array. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a830696e2271fee4c33168648f0896ce8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a830696e2271fee4c33168648f0896ce8">&#9670;&nbsp;</a></span>DisableMap()</h2>
+<a id="ac47dc0ea7b5e86e0407f154ea89b8843"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac47dc0ea7b5e86e0407f154ea89b8843">&#9670;&nbsp;</a></span>DisableMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MapLoaderFromArray.DisableMap </td>
+          <td class="memname">override void MapLoaderFromArray.DisableMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
 <p>Disables the parent map and every single wall in the pool </p>
 
+<p>Implements <a class="el" href="class_map_loader.html#acbc54ab289b1f764ee4cafd782ab0a35">MapLoader</a>.</p>
+
 </div>
 </div>
-<a id="ab78b8faa9de0288d2559c346ea4f6952"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ab78b8faa9de0288d2559c346ea4f6952">&#9670;&nbsp;</a></span>LoadMap()</h2>
+<a id="af644ed0ce77aaa60830459396192abb0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af644ed0ce77aaa60830459396192abb0">&#9670;&nbsp;</a></span>LoadMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void MapLoaderFromArray.LoadMap </td>
+          <td class="memname">override void MapLoaderFromArray.LoadMap </td>
           <td>(</td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>logicalMap</em>[][], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
-          <td class="paramtype">char&#160;</td>
-          <td class="paramname"><em>wallType</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p>Loads a map by transforming a given char array to a GameObject, and enables it on stage. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">logicalMap</td><td>The map represented in a char array</td></tr>
-    <tr><td class="paramname">wallType</td><td>The char value that represents a map wall</td></tr>
-  </table>
-  </dd>
-</dl>
+<p>Loads a map to stage. </p>
+<p>First it loads a logical map (char[][]) from the <a class="el" href="class_logical_map_loader.html" title="This abstract class defines the methods for loading logical maps in char arrays, so they can be trans...">LogicalMapLoader</a> component. Then, it transforms the logical map into a real one (GameObject) and enables it on stage. </p>
+
+<p>Implements <a class="el" href="class_map_loader.html#a5efa0bcda9682f00232b566106763a7e">MapLoader</a>.</p>
 
 </div>
 </div>
@@ -175,7 +181,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_map_loader_from_array.html">MapLoaderFromArray</a></li>
-    <li class="footer">Generated on Thu Oct 29 2020 17:39:34 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sun Nov 8 2020 10:54:50 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>

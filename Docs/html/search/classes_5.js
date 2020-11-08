@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['itemcollisionsystem_107',['ItemCollisionSystem',['../class_item_collision_system.html',1,'']]]
+  ['initialpositionsetter_128',['InitialPositionSetter',['../class_initial_position_setter.html',1,'']]],
+  ['itemcollector_129',['ItemCollector',['../class_item_collector.html',1,'']]]
 ];

@@ -97,25 +97,31 @@ Inheritance diagram for LogicalMapLoaderFromScratch:</div>
  <div class="center">
   <img src="class_logical_map_loader_from_scratch.png" usemap="#LogicalMapLoaderFromScratch_map" alt=""/>
   <map id="LogicalMapLoaderFromScratch_map" name="LogicalMapLoaderFromScratch_map">
-<area href="class_map_loader.html" title="This abstract class defines the methods for loading and disabling maps." alt="MapLoader" shape="rect" coords="0,56,191,80"/>
+<area href="class_logical_map_loader.html" title="This abstract class defines the methods for loading logical maps in char arrays, so they can be trans..." alt="LogicalMapLoader" shape="rect" coords="0,56,191,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:acb32214268d9529f6622f67907e1a8a5"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_scratch.html#acb32214268d9529f6622f67907e1a8a5">LoadMap</a> ()</td></tr>
-<tr class="memdesc:acb32214268d9529f6622f67907e1a8a5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a new map from scratch and calls the <a class="el" href="class_map_loader_from_array.html" title="This class loads a GameObject map from a given char array.">MapLoaderFromArray</a> class to enable it on stage.  <a href="class_logical_map_loader_from_scratch.html#acb32214268d9529f6622f67907e1a8a5">More...</a><br /></td></tr>
-<tr class="separator:acb32214268d9529f6622f67907e1a8a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a88c13a14e60fff347897b3c91d2792be"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_scratch.html#a88c13a14e60fff347897b3c91d2792be">DisableMap</a> ()</td></tr>
-<tr class="memdesc:a88c13a14e60fff347897b3c91d2792be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Disables current map  <a href="class_logical_map_loader_from_scratch.html#a88c13a14e60fff347897b3c91d2792be">More...</a><br /></td></tr>
-<tr class="separator:a88c13a14e60fff347897b3c91d2792be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f950cdbbd559dd12ab8c6fe745ca152"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_scratch.html#a1f950cdbbd559dd12ab8c6fe745ca152">InitializeLogicalMaps</a> ()</td></tr>
+<tr class="memdesc:a1f950cdbbd559dd12ab8c6fe745ca152"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initializes the logicalMaps array as empty  <a href="class_logical_map_loader_from_scratch.html#a1f950cdbbd559dd12ab8c6fe745ca152">More...</a><br /></td></tr>
+<tr class="separator:a1f950cdbbd559dd12ab8c6fe745ca152"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a887c08d58c9b4d89758e655d212d4cfd"><td class="memItemLeft" align="right" valign="top">override char[][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader_from_scratch.html#a887c08d58c9b4d89758e655d212d4cfd">LoadLogicalMap</a> ()</td></tr>
+<tr class="memdesc:a887c08d58c9b4d89758e655d212d4cfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a new map from scratch  <a href="class_logical_map_loader_from_scratch.html#a887c08d58c9b4d89758e655d212d4cfd">More...</a><br /></td></tr>
+<tr class="separator:a887c08d58c9b4d89758e655d212d4cfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header properties_class_logical_map_loader"><td colspan="2" onclick="javascript:toggleInherit('properties_class_logical_map_loader')"><img src="closed.png" alt="-"/>&#160;Properties inherited from <a class="el" href="class_logical_map_loader.html">LogicalMapLoader</a></td></tr>
+<tr class="memitem:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="memItemLeft" align="right" valign="top">char[][][]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_logical_map_loader.html#a834058a7c5c643d563664014b1bb1b30">LogicalMaps</a><code> [get, set]</code></td></tr>
+<tr class="memdesc:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logical representation of game maps  <a href="class_logical_map_loader.html#a834058a7c5c643d563664014b1bb1b30">More...</a><br /></td></tr>
+<tr class="separator:a834058a7c5c643d563664014b1bb1b30 inherit properties_class_logical_map_loader"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class loads a new map from scratch. </p>
-<p>Each time a new map is required, it first creates a random logical map (a char array), which then it's transformed to a real map (a GameObject) using the <a class="el" href="class_map_loader_from_array.html" title="This class loads a GameObject map from a given char array.">MapLoaderFromArray</a> class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a id="a88c13a14e60fff347897b3c91d2792be"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a88c13a14e60fff347897b3c91d2792be">&#9670;&nbsp;</a></span>DisableMap()</h2>
+<a id="a1f950cdbbd559dd12ab8c6fe745ca152"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f950cdbbd559dd12ab8c6fe745ca152">&#9670;&nbsp;</a></span>InitializeLogicalMaps()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -124,7 +130,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void LogicalMapLoaderFromScratch.DisableMap </td>
+          <td class="memname">override void LogicalMapLoaderFromScratch.InitializeLogicalMaps </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -137,14 +143,14 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Disables current map </p>
+<p>Initializes the logicalMaps array as empty </p>
 
-<p>Implements <a class="el" href="class_map_loader.html#acbc54ab289b1f764ee4cafd782ab0a35">MapLoader</a>.</p>
+<p>Implements <a class="el" href="class_logical_map_loader.html#a59ebdf9bd67f70de9b0598f5decc4b0b">LogicalMapLoader</a>.</p>
 
 </div>
 </div>
-<a id="acb32214268d9529f6622f67907e1a8a5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acb32214268d9529f6622f67907e1a8a5">&#9670;&nbsp;</a></span>LoadMap()</h2>
+<a id="a887c08d58c9b4d89758e655d212d4cfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a887c08d58c9b4d89758e655d212d4cfd">&#9670;&nbsp;</a></span>LoadLogicalMap()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -153,7 +159,7 @@ Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void LogicalMapLoaderFromScratch.LoadMap </td>
+          <td class="memname">override char [][] LogicalMapLoaderFromScratch.LoadLogicalMap </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -166,9 +172,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a new map from scratch and calls the <a class="el" href="class_map_loader_from_array.html" title="This class loads a GameObject map from a given char array.">MapLoaderFromArray</a> class to enable it on stage. </p>
+<p>Returns a new map from scratch </p>
 
-<p>Implements <a class="el" href="class_map_loader.html#a5efa0bcda9682f00232b566106763a7e">MapLoader</a>.</p>
+<p>Implements <a class="el" href="class_logical_map_loader.html#a4db458c42c91b4cfbc9666d9392ebce7">LogicalMapLoader</a>.</p>
 
 </div>
 </div>
@@ -181,7 +187,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="class_logical_map_loader_from_scratch.html">LogicalMapLoaderFromScratch</a></li>
-    <li class="footer">Generated on Thu Oct 29 2020 06:34:13 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
+    <li class="footer">Generated on Sun Nov 8 2020 10:54:50 for Top Down Game 1 by <a href="http://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.8.20 </li>
   </ul>
 </div>
 </body>
