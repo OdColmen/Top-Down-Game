@@ -19,7 +19,7 @@ public class LogicalMapLoaderFromScratch : LogicalMapLoader
     }
 
     /// <summary>
-    /// Initializes the logicalMaps array
+    /// Initializes the logicalMaps array as empty
     /// </summary>
     public override void InitializeLogicalMaps()
     {

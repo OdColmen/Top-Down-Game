@@ -1,5 +1,8 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This class enables and disables every game character
+/// </summary>
 class CharacterEnabler : MonoBehaviour
 {
     [SerializeField] private GameObject[] characters = null;

@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
 /// <summary>
-/// This class manages the hero and NPC GameObjects, the item collection logic,
-/// and invokes the GameOver event.
+/// This class handles the game characters enabling and disabling them,
+/// and invokes the GameOver event when needed.
 /// </summary>
 public class MatchManager : MonoBehaviour
 {
-    public delegate void GameOverEventHandler(bool mapWasCleared);
+    public delegate void GameOver_EventHandler(bool mapWasCleared);
     /// <summary>
     /// It's invoked when the player wins or loses a match.
     /// </summary>
-    public event GameOverEventHandler GameOver;
+    public event GameOver_EventHandler GameOver;
 
     CharacterEnabler characterEnabler;
     ItemCollector itemCollector;
@@ -45,7 +45,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Invokes the Game Over event. Intented to be used when the map was cleared.
+    /// Invokes the Game Over event. Intended to be used when the map was cleared.
     /// </summary>
     private void AllItemsWereCollected()
     {
@@ -53,7 +53,7 @@ public class MatchManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Invokes the Game Over event. Intented to be used when the map was not cleared.
+    /// Invokes the Game Over event. Intended to be used when the map was not cleared.
     /// </summary>
     private void HealthReachedZero()
     {

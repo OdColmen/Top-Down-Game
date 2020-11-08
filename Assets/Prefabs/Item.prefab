@@ -162,6 +162,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0921a36ca11c294cb530792ed6fbbf1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagsToCheck:
+  - Wall
+  - Item
+  - Enemy
 --- !u!114 &-1067953357185952263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e2a9b5c3c652ae44960e97c7bcd20d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tagsToCheck:
+  - Hero
 --- !u!114 &2413718160368126892
 MonoBehaviour:
   m_ObjectHideFlags: 0

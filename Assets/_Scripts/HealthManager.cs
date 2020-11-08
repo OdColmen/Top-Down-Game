@@ -1,12 +1,16 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This class handles the player health, reducing it and restoring it when needed.
+/// It also calls an event when health reaches zero.
+/// </summary>
 class HealthManager : MonoBehaviour
 {
-    public delegate void HealthReachedZeroEventHandler();
+    public delegate void HealthReachedZero_EventHandler();
     /// <summary>
     /// It's invoked when the [player] health reaches zero in a match.
     /// </summary>
-    public event HealthReachedZeroEventHandler HealthReachedZero;
+    public event HealthReachedZero_EventHandler HealthReachedZero;
 
     [SerializeField] private int initialHealth = 1;
     private int health;
@@ -20,7 +24,7 @@ class HealthManager : MonoBehaviour
     {
         for (int i = 0; i < enemies.Length; i++)
         {
-            enemies[i].GetComponent<EnemyCollisionSystem>().CollidedWithHero += ReduceHealth;
+            enemies[i].GetComponent<CollisionSystemWithObjectInfo>().CollidedWithGivenObject += ReduceHealth;
         }
     }
 
@@ -33,12 +37,13 @@ class HealthManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Collects an item, and invokes the Game Over event if all items were collected
+    /// Reduces health, and invokes an event if the health reaches zero
     /// </summary>
-    private void ReduceHealth(GameObject enemyThatAttacked)
+    /// <param name="enemyThatHitHero">GameObject of the enemy that hit the hero</param>
+    private void ReduceHealth(GameObject enemyThatHitHero)
     {
         // Disable enemy
-        enemyThatAttacked.SetActive(false);
+        enemyThatHitHero.SetActive(false);
 
         health--;
         
@@ -48,13 +53,16 @@ class HealthManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unsubscribes each enemy to the CollidedWithHero event
+    /// </summary>
     private void OnDestroy()
     {
         for (int i = 0; i < enemies.Length; i++)
         {
             if (enemies[i] != null)
             {
-                enemies[i].GetComponent<EnemyCollisionSystem>().CollidedWithHero -= ReduceHealth;
+                enemies[i].GetComponent<CollisionSystemWithObjectInfo>().CollidedWithGivenObject -= ReduceHealth;
             }
         }
     }

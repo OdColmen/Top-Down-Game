@@ -407,6 +407,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8224441787029297681, guid: 134aa808198f6fd42be86aeb090a2650,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134aa808198f6fd42be86aeb090a2650, type: 3}
 --- !u!1 &422795783
@@ -913,6 +918,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567146409}
     m_Modifications:
+    - target: {fileID: 2754033056769501152, guid: 8d7daf786cb67d94aa08e41b7f0d6284,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2970946779148819226, guid: 8d7daf786cb67d94aa08e41b7f0d6284,
         type: 3}
       propertyPath: m_Name
@@ -1158,6 +1168,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8224441787029297681, guid: 134aa808198f6fd42be86aeb090a2650,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134aa808198f6fd42be86aeb090a2650, type: 3}
@@ -1425,6 +1440,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8224441787029297681, guid: 134aa808198f6fd42be86aeb090a2650,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134aa808198f6fd42be86aeb090a2650, type: 3}
 --- !u!1 &1679866353
@@ -1504,6 +1524,8 @@ GameObject:
   - component: {fileID: 1808579062}
   - component: {fileID: 1808579061}
   - component: {fileID: 1808579063}
+  - component: {fileID: 1808579065}
+  - component: {fileID: 1808579064}
   m_Layer: 0
   m_Name: Match Manager
   m_TagString: Untagged
@@ -1557,6 +1579,39 @@ MonoBehaviour:
   - {fileID: 305574172}
   - {fileID: 1975514890}
   - {fileID: 2051203704}
+--- !u!114 &1808579064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808579060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a180654ec005fbb43b168f268ae776e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  initialHealth: 2
+  enemies:
+  - {fileID: 1192831090}
+  - {fileID: 305574172}
+  - {fileID: 1975514890}
+  - {fileID: 2051203704}
+--- !u!114 &1808579065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1808579060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 085e4b6f7cf32064ba4759838e5c639e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  items:
+  - {fileID: 1220524587}
+  - {fileID: 2143425973}
 --- !u!1001 &1908729127
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1624,6 +1679,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8224441787029297681, guid: 134aa808198f6fd42be86aeb090a2650,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 134aa808198f6fd42be86aeb090a2650, type: 3}
 --- !u!1 &1975514890 stripped
@@ -1657,6 +1717,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 567146409}
     m_Modifications:
+    - target: {fileID: 2754033056769501152, guid: 8d7daf786cb67d94aa08e41b7f0d6284,
+        type: 3}
+      propertyPath: tagToCheck
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 2970946779148819226, guid: 8d7daf786cb67d94aa08e41b7f0d6284,
         type: 3}
       propertyPath: m_Name

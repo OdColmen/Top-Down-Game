@@ -1,12 +1,15 @@
 ﻿using UnityEngine;
 
+/// <summary>
+/// This class handles the item collection logic, and fires an event when all items were collected.
+/// </summary>
 class ItemCollector : MonoBehaviour
 {
-    public delegate void AllItemsWereCollectedEventHandler();
+    public delegate void AllItemsWereCollected_EventHandler();
     /// <summary>
     /// It's invoked when all items are collected in a match.
     /// </summary>
-    public event AllItemsWereCollectedEventHandler AllItemsWereCollected;
+    public event AllItemsWereCollected_EventHandler AllItemsWereCollected;
 
     [SerializeField] private GameObject[] items = null;
     
@@ -17,12 +20,12 @@ class ItemCollector : MonoBehaviour
     {
         for (int i = 0; i < items.Length; i++)
         {
-            items[i].GetComponent<ItemCollisionSystem>().CollidedWithHero += CollectItem;
+            items[i].GetComponent<CollisionSystemWithObjectInfo>().CollidedWithGivenObject += CollectItem;
         }
     }
 
     /// <summary>
-    /// Collects an item, and invokes the Game Over event if all items were collected
+    /// Collects an item, and invokes an event if all items were collected
     /// </summary>
     /// <param name="itemCollected">GameObject of the item to collect</param>
     private void CollectItem(GameObject itemCollected)
@@ -46,13 +49,16 @@ class ItemCollector : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Unsubscribes each item's collision system to the CollidedWithHero event
+    /// </summary>
     private void OnDestroy()
     {
         for (int i = 0; i < items.Length; i++)
         {
             if (items[i] != null)
             {
-                items[i].GetComponent<ItemCollisionSystem>().CollidedWithHero -= CollectItem;
+                items[i].GetComponent<CollisionSystemWithObjectInfo>().CollidedWithGivenObject -= CollectItem;
             }
         }
     }
