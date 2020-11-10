@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class detects the collision between attached GameObject and GameObjects with given tag.
-/// Its fired event does not send information about the collider game object
-/// </summary>
+// This class detects the collision between attached GameObject and GameObjects with given tag.
+// Its fired event has no parameters (it does not send information about the collider game object)
 public class CollisionSystemWithoutObjectInfo : MonoBehaviour
 {
     [SerializeField] private string[] tagsToCheck = null;
 
+    // This event is invoked when the attached GameObject collides with GameObjects of given tag.
     public delegate void CollidedWithSomething_EventHandler();
-    /// <summary>
-    /// It's invoked when the attached GameObject collides with GameObjects of given tag.
-    /// </summary>
     public event CollidedWithSomething_EventHandler CollidedWithSomething;
 
     public virtual void OnCollisionEnter2D(Collision2D col)

@@ -4,10 +4,8 @@
 [RequireComponent(typeof(CharacterMovement))]
 [RequireComponent(typeof(CollisionSystemWithoutObjectInfo))]
 
-/// <summary>
-/// This class randomly sets a new direction for the game NPCs.
-/// It passes the new direction to the CharacterMovement's Move method.
-/// </summary>
+// This class randomly sets a new direction for the game NPCs.
+// It passes the new direction to the CharacterMovement's Move method.
 public class NpcRandomInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;
@@ -17,14 +15,11 @@ public class NpcRandomInput : MonoBehaviour
 
     void Awake()
     {
-        // Initialize random
         Random.InitState((int)System.DateTime.Now.Ticks);
 
-        // Get components
         characterMovement = GetComponent<CharacterMovement>();
         collisions = GetComponent<CollisionSystemWithoutObjectInfo>();
 
-        // Subscribe to "ItemCollidedWithAnything" event
         collisions.CollidedWithSomething += SetNewDirection;
     }
 
@@ -38,9 +33,7 @@ public class NpcRandomInput : MonoBehaviour
         characterMovement.Move(direction);
     }
 
-    /// <summary>
-    /// Randomly sets a new direction for the game object
-    /// </summary>
+    // Randomly sets a new direction for the game object
     public void SetNewDirection()
     {
         int random = Random.Range(0, 8);
@@ -81,7 +74,6 @@ public class NpcRandomInput : MonoBehaviour
 
     private void OnDestroy()
     {
-        // Unsubscribe to "ItemCollidedWithAnything" event
         collisions.CollidedWithSomething -= SetNewDirection;
     }
 }

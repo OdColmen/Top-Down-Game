@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-/// <summary>
-/// This class loads a new map from scratch.
-/// </summary>
+// This class loads a new map from scratch.
 public class LogicalMapLoaderFromScratch : LogicalMapLoader
 {
     private System.Random rand;
@@ -18,9 +16,7 @@ public class LogicalMapLoaderFromScratch : LogicalMapLoader
         InitializeLogicalMaps();
     }
 
-    /// <summary>
-    /// Initializes the logicalMaps array as empty
-    /// </summary>
+    // Initializes the logicalMaps array as empty
     public override void InitializeLogicalMaps()
     {
         int totalMaps = 1;
@@ -37,9 +33,7 @@ public class LogicalMapLoaderFromScratch : LogicalMapLoader
         }
     }
 
-    /// <summary>
-    /// Returns a new map from scratch
-    /// </summary>
+    // Returns a new map from scratch
     public override char[][] LoadLogicalMap()
     {
         CreateMapFromScratch();
@@ -48,9 +42,7 @@ public class LogicalMapLoaderFromScratch : LogicalMapLoader
         return LogicalMaps[map];
     }
 
-    /// <summary>
-    /// Loads a new map to the LogicalMap member
-    /// </summary>
+    // Loads a new map to the LogicalMap member
     private void CreateMapFromScratch()
     {
         int map = 0;
