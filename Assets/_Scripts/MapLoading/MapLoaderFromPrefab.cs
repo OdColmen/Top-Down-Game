@@ -1,11 +1,7 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class loads random GameObject maps from existing Prefabs.
-/// </summary>
-/// <remarks>
-/// It requires a map parent prefap, which must have one or more maps as its children.
-/// </remarks>
+// This class loads random GameObject maps from existing Prefabs.
+// It requires a map parent prefap, which must have one or more maps as its children.
 public class MapLoaderFromPrefab : MapLoader
 {
     [SerializeField] private GameObject mapParentPrefab = null;
@@ -22,9 +18,7 @@ public class MapLoaderFromPrefab : MapLoader
         InitializeMaps();
     }
 
-    /// <summary>
-    /// Initializes the parent of all the maps
-    /// </summary>
+    // Initializes the parent of all the maps
     private void InitializeMapsParent()
     {
         mapsParent = Instantiate(mapParentPrefab);
@@ -32,9 +26,7 @@ public class MapLoaderFromPrefab : MapLoader
         mapsParent.SetActive(true);
     }
 
-    /// <summary>
-    /// Initializes every single map and gets them ready for being loaded
-    /// </summary>
+    // Initializes every single map and gets them ready for being loaded
     private void InitializeMaps()
     {
         // Set array size
@@ -50,18 +42,14 @@ public class MapLoaderFromPrefab : MapLoader
         }
     }
 
-    /// <summary>
-    /// Loads a random map and enables it on stage
-    /// </summary>
+    // Loads a random map and enables it on stage
     public override void LoadMap()
     {
         int random = Random.Range(0, maps.Length);
         maps[random].SetActive(true);
     }
 
-    /// <summary>
-    /// Disables current map
-    /// </summary>
+    // Disables current map
     public override void DisableMap()
     {
         for (int i = 0; i < maps.Length; i++)

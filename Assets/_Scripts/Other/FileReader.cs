@@ -1,15 +1,9 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class reads the text of a given file and returns its content as a string.
-/// </summary>
+// This class reads the text of a given file and returns its content as a string.
 public class FileReader
 {
-    /// <summary>
-    /// Reads the text of a given file
-    /// </summary>
-    /// <param name="fileName">The name of the file</param>
-    /// <returns>The content of the file as a string</returns>
+    // Reads the text of a given file
     public string ReadFile(string fileName)
     {
         // Read file

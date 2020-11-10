@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class loads a GameObject map from a given char array.
-/// </summary>
+// This class loads a GameObject map from a given char array.
 public class MapLoaderFromArray : MapLoader
 {
     private LogicalMapLoader logicalMapLoader = null;
@@ -27,18 +25,12 @@ public class MapLoaderFromArray : MapLoader
         logicalMapLoader = GetComponent<LogicalMapLoader>();
     }
 
-    /// <summary>
-    /// Initializes the map's parent
-    /// </summary>
     private void InitializeMapParent()
     {
         map = new GameObject("Current Map");
         map.gameObject.transform.position = mapOrigin;
     }
 
-    /// <summary>
-    /// Initializes the wall pool
-    /// </summary>
     private void InitializeWallPool()
     {
         // Initialize pool
@@ -47,22 +39,16 @@ public class MapLoaderFromArray : MapLoader
         wallPool.InitializePool(wallPrefab, poolSize, map.transform);
     }
 
-    /// <summary>
-    /// Gets the horizontal and vertical dimentions from the wall prefab
-    /// </summary>
+    // Gets the horizontal and vertical dimentions from the wall prefab
     private void GetWallDimentions()
     {
         wallWidth = wallPrefab.GetComponent<SpriteRenderer>().bounds.size.x;
         wallHeight = wallPrefab.GetComponent<SpriteRenderer>().bounds.size.y;
     }
 
-    /// <summary>
-    /// Loads a map to stage. 
-    /// </summary>
-    /// <remarks>
-    /// First it loads a logical map (char[][]) from the LogicalMapLoader component. 
-    /// Then, it transforms the logical map into a real one (GameObject) and enables it on stage.
-    /// </remarks>
+    // Loads a map to stage. 
+    // First it loads a logical map (char[][]) from the LogicalMapLoader component. 
+    // Then, it transforms the logical map into a real one (GameObject) and enables it on stage.
     public override void LoadMap()
     {
         // ----- LOAD LOGICAL MAP TO VARIABLE -----
@@ -97,9 +83,7 @@ public class MapLoaderFromArray : MapLoader
         }
     }
 
-    /// <summary>
-    /// Disables the parent map and every single wall in the pool
-    /// </summary>
+    // Disables the parent map and every single wall in the pool
     public override void DisableMap()
     {
         map.SetActive(false);

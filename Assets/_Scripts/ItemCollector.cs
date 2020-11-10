@@ -1,21 +1,13 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class handles the item collection logic, and fires an event when all items were collected.
-/// </summary>
+// This class handles the item collection logic, and fires an event when all items were collected.
 class ItemCollector : MonoBehaviour
 {
     public delegate void AllItemsWereCollected_EventHandler();
-    /// <summary>
-    /// It's invoked when all items are collected in a match.
-    /// </summary>
     public event AllItemsWereCollected_EventHandler AllItemsWereCollected;
 
     [SerializeField] private GameObject[] items = null;
     
-    /// <summary>
-    /// Subscribes each item's collision system to the CollidedWithHero event
-    /// </summary>
     private void Awake()
     {
         for (int i = 0; i < items.Length; i++)
@@ -24,10 +16,7 @@ class ItemCollector : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Collects an item, and invokes an event if all items were collected
-    /// </summary>
-    /// <param name="itemCollected">GameObject of the item to collect</param>
+    // Collects an item, and invokes an event if all items were collected
     private void CollectItem(GameObject itemCollected)
     {
         // Collect (disable) item
@@ -49,9 +38,6 @@ class ItemCollector : MonoBehaviour
         }
     }
 
-    /// <summary>
-    /// Unsubscribes each item's collision system to the CollidedWithHero event
-    /// </summary>
     private void OnDestroy()
     {
         for (int i = 0; i < items.Length; i++)

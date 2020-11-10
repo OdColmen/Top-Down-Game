@@ -3,10 +3,8 @@
 // Required Components
 [RequireComponent(typeof(CharacterMovement))]
 
-/// <summary>
-/// This class handles the player input and sets the direction of the hero movement.
-/// It passes the new direction to the CharacterMovement's Move method.
-/// </summary>
+// This class handles the player input and sets the direction of the hero movement.
+// It passes the new direction to the CharacterMovement's Move method.
 public class PlayerInput : MonoBehaviour
 {
     private CharacterMovement characterMovement;
@@ -25,10 +23,6 @@ public class PlayerInput : MonoBehaviour
         characterMovement.Move(direction);
     }
 
-    /// <summary>
-    /// Reads the player directional input
-    /// </summary>
-    /// <returns>Input direction normalized</returns>
     private Vector3 GetPlayerDirectionInput()
     {
         float directionX = Input.GetAxis("Horizontal");

@@ -1,17 +1,13 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class detects the collision between attached GameObject and GameObjects with give tag.
-/// Its fired event does send information about the collider game object
-/// </summary>
+// This class detects the collision between attached GameObject and GameObjects with give tag.
+// Its fired event does send information about the collider game object
 public class CollisionSystemWithObjectInfo : MonoBehaviour
 {
     [SerializeField] private string[] tagsToCheck = null;
 
+    // This event is invoked when the attached GameObject collides with GameObjects of given tag.
     public delegate void CollidedWithGivenObject_EventHandler(GameObject obj);
-    /// <summary>
-    /// It's invoked when the attached GameObject collides with GameObjects of given tag.
-    /// </summary>
     public event CollidedWithGivenObject_EventHandler CollidedWithGivenObject;
 
     public virtual void OnCollisionEnter2D(Collision2D col)

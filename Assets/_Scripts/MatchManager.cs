@@ -1,15 +1,11 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// This class handles the game characters enabling and disabling them,
-/// and invokes the GameOver event when needed.
-/// </summary>
+// This class handles the game characters, enabling and disabling them,
+// and invokes the GameOver event when needed.
 public class MatchManager : MonoBehaviour
 {
+    // GameOver Is invoked when the player wins or loses a match.
     public delegate void GameOver_EventHandler(bool mapWasCleared);
-    /// <summary>
-    /// It's invoked when the player wins or loses a match.
-    /// </summary>
     public event GameOver_EventHandler GameOver;
 
     CharacterEnabler characterEnabler;
@@ -27,34 +23,26 @@ public class MatchManager : MonoBehaviour
         healthManager.HealthReachedZero += HealthReachedZero;
     }
 
-    /// <summary>
-    /// Starts a new match by enabling all the characters
-    /// </summary>
+    // Starts a new match by enabling all the characters
     public void StartMatch()
     {
         healthManager.RestoreHealth();
         characterEnabler.EnableCharacters();
     }
 
-    /// <summary>
-    /// Stops current match by disabling all the characters
-    /// </summary>
+    // Stops current match by disabling all the characters
     public void StopMatch()
     {
         characterEnabler.DisableCharacters();
     }
 
-    /// <summary>
-    /// Invokes the Game Over event. Intended to be used when the map was cleared.
-    /// </summary>
+    // Invokes the Game Over event. Intended to be used when the map was cleared.
     private void AllItemsWereCollected()
     {
         GameOver?.Invoke(true);
     }
 
-    /// <summary>
-    /// Invokes the Game Over event. Intended to be used when the map was not cleared.
-    /// </summary>
+    // Invokes the Game Over event. Intended to be used when the map was not cleared.
     private void HealthReachedZero()
     {
         GameOver?.Invoke(false);

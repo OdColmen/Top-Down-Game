@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System;
 
-/// <summary>
-/// This class loads random maps from a .txt file.
-/// </summary>
+// This class loads random maps from a .txt file.
 public class LogicalMapLoaderFromFile : LogicalMapLoader
 {
     private System.Random rand;
@@ -18,18 +16,13 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
         InitializeLogicalMaps();
     }
 
-    /// <summary>
-    /// Implements the LogicalMaps initialization by reading the maps from a file
-    /// </summary>
+    // Implements the LogicalMaps initialization by reading the maps from a file
     public override void InitializeLogicalMaps()
     {
-        // Read maps from file
         ReadMapsFromFile();
     }
 
-    /// <summary>
-    /// Reads file and stores every map on LogicalMaps
-    /// </summary>
+    // Reads file and stores every map on LogicalMaps
     private void ReadMapsFromFile()
     {
         // ----- READ FILE -----
@@ -107,9 +100,7 @@ public class LogicalMapLoaderFromFile : LogicalMapLoader
         }
     }
 
-    /// <summary>
-    /// Returns a random map from the previously read ones
-    /// </summary>
+    // Returns a random map from the previously read ones
     public override char[][] LoadLogicalMap()
     {
         int randomMap = rand.Next(0, LogicalMaps.Length);
