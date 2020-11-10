@@ -1,9 +1,13 @@
 # Top Down Game
 
-This is a game created for practicing different subjects:
-* Mainly development via the component pattern (Although there is minimal inheritance where it deemed fit: The three classes that handle the map loading and disabling inherit from MapLoader, so polymorphism can be applied on GameCommHub).
-* XML code documentation, in order to generate a doc, available on /Top Down Game 1/Docs/html/index.html.
-* General GitHub version control practices.
+This test game was created for general practicing purposes:
+* Mainly development via the component/composition pattern, going hand in hand with the SOLID principles. 
+    - More specifically, the Single Responsibility Principle is applied by making each component/class responsible for a single game functionality.
+    - Additionally, the Interface Segregation Principle is applied from the component perspective; There isn't a general purpose component. Instead, each GameObject's functionality is defined by attaching several components/scripts.
+* The main pilars of OOP are also used; Inheritance, Polymorphism and Encapsulation, going hand in hand again with the SOLID principles
+	- Here, the Open Closed Principle is applied on the MapLoader and LogicalMapLoader abstract classes and all of the classes that inherit from them.
+	- Also, the Liskov Substitution Principle is used for map loading.
+* I used XML code documentation as well, in order to generate a doc, available on /Top Down Game 1/Docs/html/index.html.
 
 ## Game Features
 * The goal of the game is to collect every item on each map, avoiding the enemies.
@@ -31,8 +35,6 @@ The composition pattern allows to quickly change between each map loading approa
 
 The characters' movement is also easily changed through composition. The enemies or items can be controlled like the hero and the hero can move like the NPCs.
 
-Their collision logic is also easily interchangeable.
-
 ## Docs
 
-The code documentation is avaiable on the Docs folder (/Top Down Game 1/Docs/html/index.html)
+The code documentation is available on the Docs folder (/Top Down Game 1/Docs/html/index.html)
