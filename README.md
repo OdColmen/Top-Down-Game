@@ -34,7 +34,3 @@ The composition pattern allows to quickly change between each map loading approa
 ## Character Movement
 
 The characters' movement is also easily changed through composition. The enemies or items can be controlled like the hero and the hero can move like the NPCs.
-
-## Docs
-
-The code documentation is available on the Docs folder (/Top Down Game 1/Docs/html/index.html)
